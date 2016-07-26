@@ -1,0 +1,39 @@
+﻿ 
+
+    <div class="container">
+        <div class="panel panel-default form-container">
+            <div class="panel-body">
+                @*@using (Html.BeginForm("Login", "Account", new { ReturnUrl ="dsadsad", rememberMe = true }, FormMethod.Post, new { role = "form", id = "loginForm" }))
+                {*@
+
+                <form  role="form"  id="loginForm" action="Login" method="post">
+                    <h3 class="text-center margin-xl-bottom">Welcome Back!</h3>
+                    <div class="form-group text-center">
+                        <label class="sr-only" for="email">Email Address</label>
+                        <input type="email" class="form-control input-lg" id="email" name="email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group text-center">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Password">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="SIGN IN">
+                </form>
+
+                @*}*@
+            </div>
+            <div class="panel-body text-center">
+                <div class="margin-bottom">
+                    <a class="text-muted text-underline" href="javascript:;">Forgot Password?</a>
+                </div>
+                <div>
+                    Don't have an account? <a class="text-primary-dark" href="pages-sign-up.html">Sign up here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    onDocumentReady(function ($) {
+
+});
+</script>
