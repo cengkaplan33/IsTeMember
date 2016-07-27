@@ -16,13 +16,13 @@ namespace Membership.Web.Controllers
 
         [HttpPost,HttpGet]
         [AllowAnonymous]
-        public ActionResult Login(string username, string password, string returnUrl)
+        public ActionResult Signin(string username, string password, string returnUrl)
         {
             return new JsonResult() { };
         }
 
         [HttpPost]
-        public ActionResult Login(string email, string password)
+        public ActionResult Signin(string email, string password)
         {
             return new JsonResult() { };
         }
@@ -39,11 +39,18 @@ namespace Membership.Web.Controllers
 
         [HttpPost, HttpGet]
         [AllowAnonymous]
-        public ActionResult Login(LoginViewModel model)
+        public ActionResult Signin(LoginViewModel model)
         {
             var sss = model;
 
             return new JsonResult() { };
+        }
+
+        public ActionResult Signout()
+        {
+            SecurityHelper.LogOut();
+            var returnURL = Request.QueryString["returnURL"] ?? "~/Login?noWinAuth=1";
+            return new RedirectResult(returnURL);
         }
 
         //public ActionResult Login()

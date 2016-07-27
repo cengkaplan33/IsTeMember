@@ -6,7 +6,15 @@
                 @*@using (Html.BeginForm("Login", "Account", new { ReturnUrl ="dsadsad", rememberMe = true }, FormMethod.Post, new { role = "form", id = "loginForm" }))
                 {*@
 
-                <form  role="form"  id="loginForm" action="Login" method="post">
+                @*@using (Html.BeginForm("action", "controller", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form", @id = "registerForm", data_href = "/User/Account/Register" }))
+                {
+                    ....
+                }
+
+                    //ServerSide
+                public ActionResult action(FormColection col, string ReturnUrl){         }
+                *@
+                <form  role="form"  id="loginForm" action="Signin" method="post">
                     <h3 class="text-center margin-xl-bottom">Welcome Back!</h3>
                     <div class="form-group text-center">
                         <label class="sr-only" for="email">Email Address</label>
