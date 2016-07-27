@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Membership.Web.Controllers
+namespace Membership.Site.Controllers
 {
     public class AccountController : Controller
     {
@@ -28,27 +28,27 @@ namespace Membership.Web.Controllers
         }
 
 
-        public class LoginViewModel
-        {
-            public string email { get; set; }
-            public string password { get; set; }
-            public bool rememberMe { get; set; }
-            public string returnUrl{ get; set; }
-        }
+        //public class LoginViewModel
+        //{
+        //    public string email { get; set; }
+        //    public string password { get; set; }
+        //    public bool rememberMe { get; set; }
+        //    public string returnUrl{ get; set; }
+        //}
 
 
-        [HttpPost, HttpGet]
-        [AllowAnonymous]
-        public ActionResult Signin(LoginViewModel model)
-        {
-            var sss = model;
+        //[HttpPost, HttpGet]
+        //[AllowAnonymous]
+        //public ActionResult Signin(LoginViewModel model)
+        //{
+        //    var sss = model;
 
-            return new JsonResult() { };
-        }
+        //    return new JsonResult() { };
+        //}
 
         public ActionResult Signout()
         {
-            SecurityHelper.LogOut();
+            //SecurityHelper.LogOut();
             var returnURL = Request.QueryString["returnURL"] ?? "~/Login?noWinAuth=1";
             return new RedirectResult(returnURL);
         }

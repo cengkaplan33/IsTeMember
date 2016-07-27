@@ -289,10 +289,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\EmptyController.cs" />
-    <Compile Include="Controllers\WithReadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -319,6 +315,7 @@
     <Content Include="Views\Shared\_TopNavbar.cshtml" />
     <Content Include="Views\Shared\_LayoutHead.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\SiteAuthenticate\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -330,6 +327,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Empty\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Membership.Site\Membership.Site.csproj">
+      <Project>{0da24f93-c928-405f-a700-2f4d8ae10f4c}</Project>
+      <Name>Membership.Site</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

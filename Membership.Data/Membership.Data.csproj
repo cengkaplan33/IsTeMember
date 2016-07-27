@@ -49,7 +49,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Domain\Account\Account.cs" />
+    <Compile Include="Domain\Account\AccountAddress.cs" />
+    <Compile Include="Domain\Account\AccountContact.cs" />
+    <Compile Include="Domain\Account\AccountIp.cs" />
+    <Compile Include="Domain\Account\AccountLoginAttempt.cs" />
+    <Compile Include="Domain\Account\AccountLoginLog.cs" />
+    <Compile Include="Domain\Account\AccountPasswordChange.cs" />
+    <Compile Include="Domain\Account\AccountPasswordRecovery.cs" />
+    <Compile Include="Domain\Account\AccountRecoveryQuestion.cs" />
+    <Compile Include="Domain\Account\AccountRole.cs" />
+    <Compile Include="Domain\Account\AccountSecurityCode.cs" />
+    <Compile Include="Domain\Account\AccountSocialUser.cs" />
+    <Compile Include="Domain\Address\City.cs" />
+    <Compile Include="Domain\Address\Country.cs" />
+    <Compile Include="Domain\Address\District.cs" />
+    <Compile Include="Domain\Application\Application.cs" />
+    <Compile Include="Domain\Application\ApplicationVertificationModel.cs" />
+    <Compile Include="Domain\DomainEfModel.cs" />
+    <Compile Include="Domain\Cache\Token.cs" />
+    <Compile Include="Domain\Customer\Customer.cs" />
+    <Compile Include="Domain\Customer\CustomerUser.cs" />
+    <Compile Include="Domain\Directory\Directory.cs" />
+    <Compile Include="Domain\DomainBase.cs" />
+    <Compile Include="Domain\Employee\Employee.cs" />
+    <Compile Include="Domain\Group\Group.cs" />
+    <Compile Include="Domain\RecoveryQuestion\RecoveryQuestion.cs" />
+    <Compile Include="Domain\Reseller\Reseller.cs" />
+    <Compile Include="Domain\Reseller\ResellerType.cs" />
+    <Compile Include="Domain\Right\Right.cs" />
+    <Compile Include="Domain\Right\RightVertificationModel.cs" />
+    <Compile Include="Domain\Role\Role.cs" />
+    <Compile Include="Domain\Role\RoleRight.cs" />
+    <Compile Include="Domain\Role\RoleVertificationModel.cs" />
+    <Compile Include="Domain\Security\ApiUser.cs" />
+    <Compile Include="Domain\Security\ApiUserIp.cs" />
+    <Compile Include="Domain\VertificationModel\VertificationModel.cs" />
+    <Compile Include="Domain\Web\WebUserIp.cs" />
+    <Compile Include="Domain\Web\WebUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
