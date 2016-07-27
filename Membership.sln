@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Web", "Membership.Web\Membership.Web.csproj", "{6D9F8330-DD7E-42FF-B0CD-5AAF5F92ACB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Site.Web", "Membership.Web\Membership.Site.Web.csproj", "{6D9F8330-DD7E-42FF-B0CD-5AAF5F92ACB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Data", "Membership.Data\Membership.Data.csproj", "{B0A665EC-A89A-4CCF-A733-2D58AAB5731E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Business", "Membership.Business\Membership.Business.csproj", "{81C2A2D6-7FC6-4AAE-8E00-D4792D72144E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{00694B13-A523-4F1A-A391-8E21D43B17E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Site", "Membership.Site\Membership.Site.csproj", "{0DA24F93-C928-405F-A700-2F4D8AE10F4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
