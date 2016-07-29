@@ -81,7 +81,9 @@
     <Compile Include="Controllers\WithReadController.cs" />
     <Compile Include="Core\ContextItems.cs" />
     <Compile Include="Core\ServiceHandler.cs" />
+    <Compile Include="Core\Services\Helpers\AuthorizationFilter.cs" />
     <Compile Include="Core\Services\Helpers\BaseController.cs" />
+    <Compile Include="Core\Services\Helpers\Constant.cs" />
     <Compile Include="Core\Services\Helpers\Json\JsonHelpers.cs" />
     <Compile Include="Core\Services\Helpers\Json\JsonNetResult.cs" />
     <Compile Include="Core\Services\Helpers\LogActionFilter.cs" />
@@ -109,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Membership.Business\Membership.Business.csproj">
+      <Project>{81c2a2d6-7fc6-4aae-8e00-d4792d72144e}</Project>
+      <Name>Membership.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

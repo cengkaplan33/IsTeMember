@@ -1,4 +1,6 @@
-﻿using System.Collections.Specialized;
+﻿using Membership.Site.Base;
+using System.Collections.Specialized;
+using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Routing;
@@ -36,6 +38,11 @@ namespace Membership.Site.Helpers
             }
 
             return parametersText.ToString();
+        }
+
+        public static bool IsUnAuthorizedAction(string actionName)
+        {
+            return Constant.Web.UnAuthorizedActions.Any(p => p.Contains(actionName));
         }
     }
 }

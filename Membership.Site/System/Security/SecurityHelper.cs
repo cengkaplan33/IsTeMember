@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.Security;
 using System.Text;
 using System.IO;
+using Membership.Business.Security;
 
 namespace Membership.Site
 {
@@ -42,10 +43,13 @@ namespace Membership.Site
             if (password == null)
                 throw new ArgumentNullException("password");
 
-            if (!System.Web.Security.Membership.ValidateUser(username, password))
+            //if (! System.Web.Security.Membership.ValidateUser(username, password))
+            //    return false;
+
+            if (!new SecurityManager().IsValidUser(username, password))
                 return false;
 
-            SetAuthenticationTicket(username, persist, Roles.GetRolesForUser(username));
+            SetAuthenticationTicket(username, persist);
             return true;
         }
 
@@ -63,26 +67,28 @@ namespace Membership.Site
             if (username == null)
                 throw new ArgumentNullException(username);
 
-            HttpCookie authCookie = FormsAuthentication.GetAuthCookie(username, persist);
-            FormsAuthenticationTicket tempTicket = FormsAuthentication.Decrypt(authCookie.Value);
+            //HttpCookie authCookie = FormsAuthentication.GetAuthCookie(username, persist);
+            //FormsAuthenticationTicket tempTicket = FormsAuthentication.Decrypt(authCookie.Value);
 
-            string userData = string.Join("|", roles);
+            //string userData = string.Join("|", roles);
 
-            var cookiePath = HttpContext.Current.Request.ApplicationPath;
-            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
-                tempTicket.Version,
-                tempTicket.Name,
-                tempTicket.IssueDate,
-                tempTicket.Expiration,
-                persist,
-                userData,
-                cookiePath);
-            authCookie.Value = FormsAuthentication.Encrypt(authTicket);
-            authCookie.Name = FormsAuthentication.FormsCookieName;
-            authCookie.Path = cookiePath;
+            //var cookiePath = HttpContext.Current.Request.ApplicationPath;
+            //FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
+            //    tempTicket.Version,
+            //    tempTicket.Name,
+            //    tempTicket.IssueDate,
+            //    tempTicket.Expiration,
+            //    persist,
+            //    userData,
+            //    cookiePath);
+            //authCookie.Value = FormsAuthentication.Encrypt(authTicket);
+            //authCookie.Name = FormsAuthentication.FormsCookieName;
+            //authCookie.Path = cookiePath;
 
-            HttpContext.Current.Response.Cookies.Remove(authCookie.Name);
-            HttpContext.Current.Response.Cookies.Add(authCookie);
+            //HttpContext.Current.Response.Cookies.Remove(authCookie.Name);
+            //HttpContext.Current.Response.Cookies.Add(authCookie);
+
+            FormsAuthentication.SetAuthCookie(username, false);
         }
 
         private static string[] EmptyStringArray = new string[0];

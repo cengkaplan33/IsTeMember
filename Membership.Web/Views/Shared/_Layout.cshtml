@@ -60,13 +60,7 @@
 
 @{
 
-    if (true)
-    { 
-        <body class="body-sign-in">
-            @RenderBody()
-        </body>
-    }
-    else
+    if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
     {
         <body class="">
             @Html.Partial("_TopNavbar");
@@ -76,6 +70,12 @@
                     @RenderBody()
                 </div>
             </div>
+        </body>
+    }
+    else
+    {
+        <body class="body-sign-in">
+            @RenderBody()
         </body>
     }
 }

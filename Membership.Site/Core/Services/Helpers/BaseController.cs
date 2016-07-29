@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace Membership.Site.Base
 {
+    [AuthorizationFilter]
     [LogActionFilter]
     public class BaseController : Controller, IDisposable
     {

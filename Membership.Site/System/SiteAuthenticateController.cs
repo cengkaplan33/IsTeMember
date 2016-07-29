@@ -34,7 +34,7 @@ namespace Membership.Site.Controllers
         [HttpPost]
         public ActionResult Signin(string email, string password)
         {
-            var returnUrl = "Dashboard/Index";
+            var returnUrl = Constant.Web.RedirectHomePage;
             var model = new LoginPageModel();
             model.ReturnURL = returnUrl;
             model.DisplayWinLogin = true;
@@ -42,12 +42,12 @@ namespace Membership.Site.Controllers
 
             if (username == null || Request.HttpMethod != "POST")
             {
-                return new RedirectResult("SiteAuthenticate/Index");
+                //return new RedirectResult("SiteAuthenticate/Index");
+                return new RedirectResult(Constant.Web.RedirectLoginPage);
             }
             else
             {
-                if (SecurityHelper.Authenticate(username, password, false) ||
-                    AdminFakeLogin(username, password))
+                if (SecurityHelper.Authenticate(username, password, false) || AdminFakeLogin(username, password))
                 {
                     returnUrl = FixReturnUrl(Request.ApplicationPath, returnUrl);
                     return Redirect(returnUrl);
@@ -56,7 +56,7 @@ namespace Membership.Site.Controllers
                 {
                     ViewData["HideLeftNavigation"] = true;
                     model.ErrorMessage = "Giriş işlemi başarısız";
-                    return View(model);
+                    return View("Index",model);
                 }
             }
 
@@ -66,8 +66,8 @@ namespace Membership.Site.Controllers
         public ActionResult Signout()
         {
             SecurityHelper.LogOut();
-            var returnURL = Request.QueryString["returnURL"] ?? "~/Login?noWinAuth=1";
-            return new RedirectResult(returnURL);
+            //var returnURL = Request.QueryString["returnURL"] ?? "~/Login?noWinAuth=1";
+            return new RedirectResult(Constant.Web.RedirectLoginPage);
         }
 
         //OK::NOT:: Index isminde iki method olamaz değişkenleri farklı olsa bile.

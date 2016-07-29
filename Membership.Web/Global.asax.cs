@@ -14,5 +14,17 @@ namespace Membership.Site.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+                void Application_BeginRequest(object sender, EventArgs e)
+        {
+        }
+
+        protected void Application_PreRequestHandlerExecute(Object sender, EventArgs e)
+        {
+        }
+
+        protected void Application_EndRequest(Object sender, EventArgs e)
+        {
+        }
     }
 }

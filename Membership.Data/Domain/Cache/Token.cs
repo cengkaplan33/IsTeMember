@@ -17,7 +17,7 @@ namespace Membership.Core.Domain.Cache
 
         public List<string> IpList { get; set; }
 
-        public DateTime CreateTime { get; }
+        public DateTime CreateTime { get; set; }
 
         public string RequestIp { get; set; }
     }
