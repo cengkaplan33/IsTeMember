@@ -13,8 +13,13 @@ Logic katmanýnda,  DAL katmanýnda yer alan EntityFramework yapýsýna karþýlýk gel
 
 3. Service  (Servis)
 Bu katman Presentation katmanýndan gelen kriterler doðrultusunda bu kriterleri belirli bir þablona oturtarak Logic katmana iletmek ve daha sonra Logic katmanýnda aldýðý veriyi tekrar sunum katmanýna iletmek ile yükümlü olan katmandýr.
+Bileþenler
+A. REST : Rest Servisleri olarak Json formatýnda veri veren servis yapýsý.
+B. Native yazýlýmlar (cache vs ...)
 
 4. Presentation (Sunum - Gösterim)
 Bu katman, verinin gösterilmeye hazýr olduðunun göstergesi olan katmandýr. Burada son kullanýcý ile etkileþime girilerek gösterilmesi istenen verilerin hazýrlanan þablonlar dahilinde gösterileceði katmandýr.
-
+A. MVC Patern
+B. Jqery ile client-side etkileþim
+C. IRIY Admin Panel (Bootstrap uyumlu)
 

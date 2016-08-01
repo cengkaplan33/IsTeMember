@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81C2A2D6-7FC6-4AAE-8E00-D4792D72144E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{04FE0F45-3031-4925-B59A-DB35A7B2EDA6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Membership.Business</RootNamespace>
-    <AssemblyName>Membership.Business</AssemblyName>
+    <RootNamespace>Test_BusinessLayer</RootNamespace>
+    <AssemblyName>Test_BusinessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,21 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Manager\WebUserManager.cs" />
-    <Compile Include="Models\Web\WebUserModel.cs" />
-    <Compile Include="Models\Web\WebUserIpModel.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\WebUserRepository.cs" />
-    <Compile Include="Security\WebUserAuthenticationProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Membership.Data\Membership.Data.csproj">
-      <Project>{b0a665ec-a89a-4ccf-a733-2d58aab5731e}</Project>
-      <Name>Membership.Data</Name>
+    <ProjectReference Include="..\Membership.Business\Membership.Business.csproj">
+      <Project>{81c2a2d6-7fc6-4aae-8e00-d4792d72144e}</Project>
+      <Name>Membership.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

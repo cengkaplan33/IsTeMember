@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Membership.Site.Controllers
 {
-    public class AccountController : BaseController
+    public class WebUserController : BaseController
     {
         // GET: Account
         public ActionResult Index()
@@ -15,11 +15,11 @@ namespace Membership.Site.Controllers
             return View();
         }
 
-        [HttpPost,HttpGet]
+        [HttpPost, HttpGet]
         [AllowAnonymous]
-        public ActionResult Signin(string username, string password, string returnUrl)
+        public ActionResult LoggedUser()
         {
-            return new JsonResult() { };
+           return this.Respond(() => new Services.WebUserService().LoggedUser());
         }
 
         [HttpPost]

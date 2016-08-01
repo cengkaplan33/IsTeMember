@@ -1,6 +1,6 @@
 ﻿namespace Membership.Business.Model
 {
-    public class WebUserIp
+    public class WebUserIpModel
     {
         public int Id { get; set; }
         public int WebUserId { get; set; }

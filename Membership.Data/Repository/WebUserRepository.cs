@@ -10,14 +10,42 @@ namespace Membership.Data.Repository
 {
     public class WebUserRepository : GenericRepository<WebUser>
     {
-        public WebUserRepository(DbContext dbcontext)
-            : base(dbcontext)
+        public WebUserRepository()
+            : base(new DomainEfModel())
         {
+
         }
 
-        public List<WebUser> GetUsersByName(string nameStartsWith)
-        {
-            return this.GetObjectsByParameters(p => p.IsDeleted == 0 & p.Email.Contains(nameStartsWith)).ToList();
-        }
+        //public Membership.Core.Domain.Application.Application LoggedUser(string nameStartsWith)
+        //{
+        //    return this.GetObjectsByParameters(p => p.Id == 1).FirstOrDefault();
+        //}
     }
 }
+
+
+//    using Membership.Core.Domain.Web;
+//using System;
+//using System.Collections.Generic;
+//using System.Data.Entity;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+
+//namespace Membership.Data.Repository
+//    {
+//        public class WebUserRepository : GenericRepository<Membership.Core.Domain.Application.Application>
+//        {
+//            public WebUserRepository()
+//                : base(new DbContext("name=MembershipDefault"))
+//            {
+
+//            }
+
+//            public Membership.Core.Domain.Application.Application LoggedUser(string nameStartsWith)
+//            {
+//                return this.GetObjectsByParameters(p => p.Id == 1).FirstOrDefault();
+//            }
+//        }
+//    }
+

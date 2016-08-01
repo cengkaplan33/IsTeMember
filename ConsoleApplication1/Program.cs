@@ -14,6 +14,7 @@ namespace ConsoleApplication1
             {
                 db.Database.Connection.Open();
                 var list = db.Applications.ToList();
+                var listW = db.WebUsers.ToList();
             }
 
                 Console.ReadKey();

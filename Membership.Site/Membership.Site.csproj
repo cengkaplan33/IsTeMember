@@ -73,12 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController - Copy - Copy.cs" />
-    <Compile Include="Controllers\AccountController - Copy.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\EmptyController.cs" />
-    <Compile Include="Controllers\WithReadController.cs" />
     <Compile Include="Core\ContextItems.cs" />
     <Compile Include="Core\ServiceHandler.cs" />
     <Compile Include="Core\Services\Helpers\AuthorizationFilter.cs" />
@@ -96,6 +91,10 @@
     <Compile Include="Core\Services\Models\ServiceRequest.cs" />
     <Compile Include="Core\Services\Models\ServiceResponse.cs" />
     <Compile Include="Core\StringHelper.cs" />
+    <Compile Include="Module\WebUser\WebUserController.cs" />
+    <Compile Include="Module\WebUser\WebUserModel.cs" />
+    <Compile Include="Module\WebUser\WebUserRequestResponse.cs" />
+    <Compile Include="Module\WebUser\WebUserService.cs" />
     <Compile Include="Module\Account\AccountController.cs" />
     <Compile Include="Module\Account\AccountModel.cs" />
     <Compile Include="Module\Account\AccountService.cs" />

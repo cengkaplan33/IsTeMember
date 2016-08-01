@@ -1,4 +1,6 @@
-﻿<nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
+﻿@using myMembershipSite = Membership.Site;
+
+<nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
     <div class="navbar-brand-group">
         <a class="navbar-sidebar-toggle navbar-link" data-sidebar-toggle>
             <i class="fa fa-lg fa-fw fa-bars"></i>
@@ -133,7 +135,7 @@
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle navbar-user" href="javascript:;">
                 <img class="img-circle" src="~/theme/demo/images/profile.jpg">
-                <span class="hidden-xs">Marlon Brice</span>
+                <span class="hidden-xs">@myMembershipSite.SecurityHelper.LoggerUserItem.DisplayName</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu pull-right-xs">

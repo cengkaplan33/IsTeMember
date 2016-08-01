@@ -1,8 +1,10 @@
-﻿<aside class="sidebar sidebar-default">
+﻿@using myMembershipSite = Membership.Site;
+
+<aside class="sidebar sidebar-default">
     <div class="sidebar-profile">
         <img class="img-circle profile-image" src="~/theme/demo/images/profile.jpg">
         <div class="profile-body">
-            <h4>Marlon Brice</h4>
+            <h4>@myMembershipSite.SecurityHelper.LoggerUserItem.DisplayName</h4>
             <div class="sidebar-user-links">
                 <a class="btn btn-link btn-xs" href="pages-profile.html" data-placement="bottom" data-toggle="tooltip" data-original-title="Profile"><i class="fa fa-user"></i></a>
                 <a class="btn btn-link btn-xs" href="javascript:;" data-placement="bottom" data-toggle="tooltip" data-original-title="Messages"><i class="fa fa-envelope"></i></a>
