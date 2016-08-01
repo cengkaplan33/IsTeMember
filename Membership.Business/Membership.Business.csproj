@@ -49,8 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\GenericRepository.cs" />
-    <Compile Include="Common\IRepository.cs" />
     <Compile Include="Models\Web\WebUser.cs" />
     <Compile Include="Models\Web\WebUserIp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

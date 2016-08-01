@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Data", "Membersh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Business", "Membership.Business\Membership.Business.csproj", "{81C2A2D6-7FC6-4AAE-8E00-D4792D72144E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{00694B13-A523-4F1A-A391-8E21D43B17E8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Site", "Membership.Site\Membership.Site.csproj", "{0DA24F93-C928-405F-A700-2F4D8AE10F4C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{D2B60024-A96A-4E67-B473-A36CC2BF72D7}"
@@ -33,10 +31,6 @@ Global
 		{81C2A2D6-7FC6-4AAE-8E00-D4792D72144E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81C2A2D6-7FC6-4AAE-8E00-D4792D72144E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81C2A2D6-7FC6-4AAE-8E00-D4792D72144E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00694B13-A523-4F1A-A391-8E21D43B17E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA24F93-C928-405F-A700-2F4D8AE10F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU

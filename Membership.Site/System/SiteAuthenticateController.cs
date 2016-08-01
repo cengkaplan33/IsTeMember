@@ -60,7 +60,7 @@ namespace Membership.Site.Controllers
                 }
             }
 
-            return new JsonResult() { };
+            //return new JsonResult() { };
         }
 
         public ActionResult Signout()

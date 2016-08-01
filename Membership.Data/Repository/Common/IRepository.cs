@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Membership.Business.Repository
+namespace Membership.Data.Repository
 {
     public interface IRepository<T> where T : class
     {

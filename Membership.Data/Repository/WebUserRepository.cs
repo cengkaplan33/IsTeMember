@@ -1,5 +1,4 @@
 ﻿using Membership.Core.Domain.Web;
-using Membership.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Membership.Business.Repository
+namespace Membership.Data.Repository
 {
     public class WebUserRepository : GenericRepository<WebUser>
     {

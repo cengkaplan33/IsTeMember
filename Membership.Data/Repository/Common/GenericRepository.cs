@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Membership.Business.Repository
+namespace Membership.Data.Repository
 {
     public class GenericRepository<T> : IDisposable,IRepository<T> where T : class
     {
