@@ -1,0 +1,20 @@
+
+Katmanlar, Bileþenleri ve Görevleri
+1. Data Access Layer (DAL)
+Bu katman da amaç database de yer alan veri ile etkileþime geçmek. Veriyi okumak, yazmak veya silmek gibi data manipülasyonlarýnýn yapýlabileceði bir katman olmasý.
+a. Data Temsil Aracý (EntityFramework)
+Database deki tablo yapýsýnýn kod seviyesindeki temsil aracý olarak görev yapacak olan eleman.
+b. Data manipülasyon araçlarý ( EntiyFramework ile çalýþan Repository)
+Data manipulasyon operasyonlarýný yaparken ortaya çýkabilecek iþ yükünü azaltmak ve Transaction gibi güvenlik ve hassasiyet gerektiren noktalarý yönetmek iþini yapacak olan eleman.
+
+2. Logic 
+Bu katmanda DAL katmanýna direk eriþebilen tek katman olup DAL katmanýndan verilerin belirli bir logic ( mantýk - iþ - akýþ) çerçevesinde istenmesi veya gönderilmesi iþini yapan katmandýr.
+Logic katmanýnda,  DAL katmanýnda yer alan EntityFramework yapýsýna karþýlýk gelen bir  Model yapýsý kullanýlýr. bu yapý verileri bir üst katman olan Service katmanýna uygun bir þekilde sunar. BU sayede bir üst katman olan Service katmaný bir alt katman olan DAL 'ý bilmez, tanýmaz, göremez veya eriþemez. 
+
+3. Service  (Servis)
+Bu katman Presentation katmanýndan gelen kriterler doðrultusunda bu kriterleri belirli bir þablona oturtarak Logic katmana iletmek ve daha sonra Logic katmanýnda aldýðý veriyi tekrar sunum katmanýna iletmek ile yükümlü olan katmandýr.
+
+4. Presentation (Sunum - Gösterim)
+Bu katman, verinin gösterilmeye hazýr olduðunun göstergesi olan katmandýr. Burada son kullanýcý ile etkileþime girilerek gösterilmesi istenen verilerin hazýrlanan þablonlar dahilinde gösterileceði katmandýr.
+
+
