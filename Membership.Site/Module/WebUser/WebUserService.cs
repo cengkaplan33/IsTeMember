@@ -6,28 +6,28 @@ namespace Membership.Site.Services
 {
     public partial class WebUserService
     {
-        public ListResponse<AccountModel> List(AccountSearchRequest request)
-        {
-            ListResponse<AccountModel> response = new ListResponse<AccountModel>();
+        //public ListResponse<AccountModel> List(AccountSearchRequest request)
+        //{
+        //    ListResponse<AccountModel> response = new ListResponse<AccountModel>();
 
-            if (request.Vade == 0 || request.Tutar == 0)
-                return response;
+        //    if (request.Vade == 0 || request.Tutar == 0)
+        //        return response;
 
 
-            //using (var db = new BenimKredimModel())
-            //{
-            //    response.Entities = db.BankCredits.Where(x => x.CreditTypeId == (int)BankCreditType.Personal & x.InstalmentCount == request.Vade)
-            //        .Select(x => new AccountModel()
-            //        {
-            //            BankaAdi = x.Bank.Name,
-            //            VadeOrani = x.ProfitRate,
-            //            VadeliTutar = (request.Tutar + request.Tutar * x.ProfitRate)
-            //        })
-            //        .ToList();
-            //}
+        //    //using (var db = new BenimKredimModel())
+        //    //{
+        //    //    response.Entities = db.BankCredits.Where(x => x.CreditTypeId == (int)BankCreditType.Personal & x.InstalmentCount == request.Vade)
+        //    //        .Select(x => new AccountModel()
+        //    //        {
+        //    //            BankaAdi = x.Bank.Name,
+        //    //            VadeOrani = x.ProfitRate,
+        //    //            VadeliTutar = (request.Tutar + request.Tutar * x.ProfitRate)
+        //    //        })
+        //    //        .ToList();
+        //    //}
 
-            return response;
-        }
+        //    return response;
+        //}
 
         public RetrieveResponse<WebUserModel> Retrieve(RetrieveRequest request)
         {

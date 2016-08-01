@@ -125,12 +125,25 @@ namespace Membership.Site
             HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName);
             // Setting up a cookie which has expired, Enforce client to delete this cookie.
             authCookie.Expires = DateTime.Now.AddYears(-30);
+            authCookie.HttpOnly = true;
             //authCookie.Path = UrlHelper.GetApplicationRootPath();
 
             // bu path /site olmalı, /site/ olduğunda eğer http://sunucu/site yazılırsa path cookie bu yola uygulanmıyor, sürekli login gerekiyor!
             authCookie.Path = HttpContext.Current.Request.ApplicationPath;
             HttpContext.Current.Response.Cookies.Add(authCookie);
-            //FormsAuthentication.SignOut();
+
+
+            //// clear authentication cookie
+            //HttpCookie cookie1 = new HttpCookie(FormsAuthentication.FormsCookieName, "");
+            //cookie1.Expires = DateTime.Now.AddYears(-1);
+            //Response.Cookies.Add(cookie1);
+
+            // clear session cookie (not necessary for your current problem but i would recommend you do it anyway)
+            HttpCookie cookie2 = new HttpCookie("ASP.NET_SessionId", "");
+            cookie2.Expires = DateTime.Now.AddYears(-1);
+            HttpContext.Current.Response.Cookies.Add(cookie2);
+
+            FormsAuthentication.SignOut();
         }
 
         /// <summary>

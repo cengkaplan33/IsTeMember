@@ -94,6 +94,9 @@
     <Content Include="Theme\assets\bs3\js\bootstrap.min.js" />
     <Content Include="Theme\assets\font-awesome\css\font-awesome.css" />
     <Content Include="Theme\assets\font-awesome\fonts\fontawesome-webfont862f.svg" />
+    <Content Include="Theme\assets\libs\cengaver\cengaver.js" />
+    <Content Include="Theme\assets\libs\cengaver\jquery.blockUI.js" />
+    <Content Include="Theme\assets\libs\cengaver\jquery.json.js" />
     <Content Include="Theme\assets\libs\jquery-ui\minified\jquery-ui.min.js" />
     <Content Include="Theme\assets\libs\jquery\jquery.min.js" />
     <Content Include="Theme\assets\plugins\bootbox\bootbox.js" />
@@ -316,6 +319,10 @@
     <Content Include="Views\Shared\_LayoutHead.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\SiteAuthenticate\Index.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Membership\Account\Index.cshtml" />
+    <Content Include="Views\Membership\Domain\Index.cshtml" />
+    <Content Include="Views\Membership\Group\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

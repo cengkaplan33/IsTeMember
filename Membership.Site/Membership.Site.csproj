@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Application\AccountController.cs" />
+    <Compile Include="Controllers\Application\ApplicationController.cs" />
+    <Compile Include="Controllers\Application\ApplicationModel.cs" />
+    <Compile Include="Controllers\Application\ApplicationService.cs" />
+    <Compile Include="Controllers\Application\DomainController.cs" />
+    <Compile Include="Controllers\Application\GroupController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Core\ContextItems.cs" />
     <Compile Include="Core\ServiceHandler.cs" />
@@ -95,9 +101,6 @@
     <Compile Include="Module\WebUser\WebUserModel.cs" />
     <Compile Include="Module\WebUser\WebUserRequestResponse.cs" />
     <Compile Include="Module\WebUser\WebUserService.cs" />
-    <Compile Include="Module\Account\AccountController.cs" />
-    <Compile Include="Module\Account\AccountModel.cs" />
-    <Compile Include="Module\Account\AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\SiteAuthenticateController.cs" />
     <Compile Include="System\Security\LoginPageModel.cs" />
