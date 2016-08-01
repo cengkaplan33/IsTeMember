@@ -50,10 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager\WebUserManager.cs" />
-    <Compile Include="Models\Web\WebUserModel.cs" />
-    <Compile Include="Models\Web\WebUserIpModel.cs" />
+    <Compile Include="Models\Web\WebUser.cs" />
+    <Compile Include="Models\Web\WebUserIp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\WebUserRepository.cs" />
     <Compile Include="Security\WebUserAuthenticationProvider.cs" />
   </ItemGroup>
   <ItemGroup>

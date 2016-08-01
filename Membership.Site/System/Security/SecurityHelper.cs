@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Membership.Business.Security;
+using Membership.Site.Model;
+using Membership.Site.Services;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
-using System.Text;
-using System.IO;
-using Membership.Business.Security;
-using Membership.Site.Services;
-using Membership.Site.Model;
 
 namespace Membership.Site
 {
@@ -287,7 +285,7 @@ namespace Membership.Site
             }
         }
 
-        public static WebUserModel LoggerUserItem
+        public static WebUser LoggerUserItem
         {
             get
             {

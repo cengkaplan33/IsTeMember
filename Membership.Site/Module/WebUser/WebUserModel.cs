@@ -2,7 +2,7 @@
 
 namespace Membership.Site.Model
 {
-    public class WebUserModel
+    public class WebUser
     {
         public int? Id { get; set; }
         public int ApplicationId { get; set; }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
@@ -15,9 +12,15 @@ namespace ConsoleApplication1
                 db.Database.Connection.Open();
                 var list = db.Applications.ToList();
                 var listW = db.WebUsers.ToList();
+
+                foreach (var item in list)
+                {
+                    Console.WriteLine(item.ApplicationName);
+                }
+
             }
 
-                Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }

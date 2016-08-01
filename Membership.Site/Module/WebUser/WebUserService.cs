@@ -29,9 +29,9 @@ namespace Membership.Site.Services
         //    return response;
         //}
 
-        public RetrieveResponse<WebUserModel> Retrieve(RetrieveRequest request)
+        public RetrieveResponse<WebUser> Retrieve(RetrieveRequest request)
         {
-            RetrieveResponse<WebUserModel> response = new RetrieveResponse<WebUserModel>();
+            RetrieveResponse<WebUser> response = new RetrieveResponse<WebUser>();
 
             if (request.EntityId == null || request.EntityId <= 0)
                 throw new System.Exception("EntityId is null or unassigned");
@@ -40,18 +40,18 @@ namespace Membership.Site.Services
             return response;
         }
 
-        public RetrieveResponse<WebUserModel> LoggedUser()
+        public RetrieveResponse<WebUser> LoggedUser()
         {
-            RetrieveResponse<WebUserModel> response = new RetrieveResponse<WebUserModel>();
+            RetrieveResponse<WebUser> response = new RetrieveResponse<WebUser>();
 
             if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
 
             }
             var webUserEntity = new Membership.Business.Manager.WebUserManager().LoggedUser(System.Web.HttpContext.Current.User.Identity.Name);
-            //response.Entity = new WebUserModel() { ApplicationId = 1, Id = 1, DisplayName = "Ömer KAPLAN", Email = "ok@g.com" };
+            //response.Entity = new WebUser() { ApplicationId = 1, Id = 1, DisplayName = "Ömer KAPLAN", Email = "ok@g.com" };
 
-            response.Entity = new WebUserModel()
+            response.Entity = new WebUser()
             {
                 ApplicationId = webUserEntity.ApplicationId,
                 Id = webUserEntity.Id,

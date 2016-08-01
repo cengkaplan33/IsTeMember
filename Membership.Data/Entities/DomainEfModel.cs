@@ -23,13 +23,6 @@ namespace Membership.Data
             Database.SetInitializer<DomainEfModel>(null);
         }
 
-        ////OK::NOT:: oluþmamýþ tablolarý ömap etmek için kullanýlýr
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<WebUser>().ToTable("WebUser");
-        //}
-
-
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
