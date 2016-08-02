@@ -24,15 +24,21 @@
                             <table id="table-basicv" class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ApplicationId</th>
-                                        <th>Application</th>
+                                        <th>Id</th>
+                                        <th>ApplicationCode</th>
+                                        <th>ApplicationName</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody> </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>ApplicationId</th>
-                                        <th>Application</th>
+                                        <th>Id</th>
+                                        <th>ApplicationCode</th>
+                                        <th>ApplicationName</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -63,8 +69,11 @@
                         $('#table-basicv').DataTable({
                             data: response.Entities,
                             columns: [
-                                { data: "ApplicationId" },
-                                { data: "Application" },
+                                { data: "Id" },
+                                { data: "ApplicationCode" },
+                                { data: "ApplicationName" },
+                                { data: "Description" },
+                                { data: "Status" },
                             ]
                         });
 

@@ -90,6 +90,7 @@
     <Compile Include="Entities\Web\WebUserIp.cs" />
     <Compile Include="Entities\Web\WebUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ApplicationRepository.cs" />
     <Compile Include="Repository\WebUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
