@@ -90,6 +90,8 @@ namespace Membership.Data.Repository
             }
 
             entry.State = EntityState.Modified;
+
+            this.GenericDBContext.SaveChanges();
         }
 
         public void Delete(T entity)

@@ -89,6 +89,8 @@
     <Compile Include="Core\Services\Helpers\Json\JsonNetResult.cs" />
     <Compile Include="Core\Services\Helpers\LogActionFilter.cs" />
     <Compile Include="Core\Services\Helpers\MVCUtility.cs" />
+    <Compile Include="Core\Services\Models\DeleteResponse.cs" />
+    <Compile Include="Core\Services\Models\DeleteRequest.cs" />
     <Compile Include="Core\Services\Models\ListRequest.cs" />
     <Compile Include="Core\Services\Models\ListResponse.cs" />
     <Compile Include="Core\Services\Models\RetrieveRequest.cs" />

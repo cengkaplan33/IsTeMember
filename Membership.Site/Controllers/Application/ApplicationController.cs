@@ -1,4 +1,5 @@
 ﻿using Membership.Site.Base;
+using Membership.Site.Model;
 using Membership.Site.Services;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,25 @@ namespace Membership.Site.Controllers
             return View();
         }
 
+        // GET: Application
+        public ActionResult Edit()
+        {
+
+            var model = new ApplicationModel() { Id = 2, ApplicationCode = "plesk0101", ApplicationName = "Server Panel", Description = "For YOU", Status = 1 };
+            return View(model);
+        
+        }
+
         [HttpPost]
         public ActionResult List(ApplicationListRequest request)
         {
             return this.Respond(() => new ApplicationService().List(request));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(DeleteRequest request)
+        {
+            return this.Respond(() => new ApplicationService().Delete(request));
         }
 
         //public class AuditEntryController : GenericEntityController<AuditEntryRow, AuditEntryService, AuditEntryListRequest>

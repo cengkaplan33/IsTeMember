@@ -17,16 +17,17 @@ namespace Membership.Site.Services
         public ListResponse<ApplicationModel> List(ApplicationListRequest request)
         {
             ListResponse<ApplicationModel> response = new ListResponse<ApplicationModel>();
+
             var applications = new ApplicationManager().List();
 
             if (applications == null || applications.Count == 0)
                 return response;
 
-            
 
-                response.Entities = applications.Select(entity => new ApplicationModel()
+
+            response.Entities = applications.Select(entity => new ApplicationModel()
             {
-                Id = entity.Id,
+                Id = entity.Id.Value,
                 ApplicationCode = entity.ApplicationCode,
                 ApplicationName = entity.ApplicationName,
                 Description = entity.Description,
@@ -43,7 +44,7 @@ namespace Membership.Site.Services
 
             //for (int i = 5; i < 20; i++)
             //    response.Entities.Add(new ApplicationModel() { ApplicationId = i, Application = " Admin " + i + " Cloud Server Manager" });
-          
+
             return response;
         }
 
@@ -64,5 +65,23 @@ namespace Membership.Site.Services
         //    return response;
         //}
 
+        public DeleteResponse Delete(DeleteRequest request)
+        {
+            if (request.EntityId == null || request.EntityId <= 0)
+                throw new Exception("EntityId boş geçilemez");
+
+
+            //OK::NOT:: aşağıdaki şekilde WebUserManager a erişebilirim ama katmanlı yapı adına bu işlemi servis üzerinden yapacağım.
+            //new Membership.Business.Manager.WebUserManager().LoggedUser(System.Web.HttpContext.Current.User.Identity.Name);
+
+            var loggedUser = SecurityHelper.LoggerUserItem;
+
+            new ApplicationManager(new Business.Model.WebUser()
+            {
+                Id = loggedUser.Id.Value,
+            }).Delete(request.EntityId.Value);
+
+            return new DeleteResponse();
+        }
     }
 }

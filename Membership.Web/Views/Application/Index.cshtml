@@ -6,6 +6,14 @@
                     <li class="active"><a href="javascript:;">List</a></li>
                 </ol>
             </div>
+
+            <div class="panel-body">
+                <button id="bb-alert" class="btn btn-warning margin-sm-bottom margin-sm-right">Alert Modal</button>
+                <button id="bb-confirm" class="btn btn-success margin-sm-bottom margin-sm-right">Confirm Modal</button>
+                <button id="bb-prompt" class="btn btn-info margin-sm-bottom margin-sm-right">Prompt Modal</button>
+                <button id="bb-custom" class="btn btn-inverse margin-sm-bottom">Custom Modal</button>
+            </div>
+
             <div class="page-heading page-heading-md">
                 <h2>Uygulamalarınız</h2>
             </div>
@@ -29,6 +37,8 @@
                                         <th>ApplicationName</th>
                                         <th>Description</th>
                                         <th>Status</th>
+                                        <th>Render</th>
+                                        <th>Renderew</th>
                                     </tr>
                                 </thead>
                                 <tbody> </tbody>
@@ -39,6 +49,8 @@
                                         <th>ApplicationName</th>
                                         <th>Description</th>
                                         <th>Status</th>
+                                        <th>Render</th>
+                                        <th>Renderew</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -48,7 +60,130 @@
  
             </div>
 
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Modal Sizes</h4>
+            <p>
+                Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.
+            </p>
+
+            <div class="panel-options">
+                <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
+                <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
+                <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#bs-modal-lg">Large modal</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#bs-modal-sm">Small modal</button>
+        </div>
+    </div>
+</div>
  
+<!-- start: DEFAULT_MODAL -->
+<div id="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bs-modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="bs-modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Text in a modal</h4>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+
+                <h4>Popover in a modal</h4>
+                <p>This <a href="#" data-toggle="popover" role="button" class="btn btn-default " title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
+
+                <h4>Tooltips in a modal</h4>
+                <p><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip">This link</a> and <a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+                <hr>
+
+                <h4>Overflowing text to show scroll behavior</h4>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end: DEFAULT_MODAL -->
+
+<!-- start: SMALL_MODAL -->
+<div id="bs-modal-sm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bs-modal-sm-title" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="bs-modal-sm-title">Small Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Text in a modal</h4>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+
+                <h4>Popover in a modal</h4>
+                <p>This <a href="#" data-toggle="popover" role="button" class="btn btn-default " title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
+
+                <h4>Tooltips in a modal</h4>
+                <p><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip">This link</a> and <a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip">that link</a> should have tooltips on hover.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end: SMALL_MODAL -->
+
+<!-- start: LARGE_MODAL -->
+<div id="bs-modal-lg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bs-modal-lg-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="bs-modal-lg-title">Large Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Text in a modal</h4>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+
+                <h4>Popover in a modal</h4>
+                <p>This <a href="#" data-toggle="popover" role="button" class="btn btn-default " title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
+
+                <h4>Tooltips in a modal</h4>
+                <p><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip">This link</a> and <a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip">that link</a> should have tooltips on hover.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end: LARGE_MODAL -->
+
+<!-- start: REMOTE_MODAL -->
+<div id="bs-modal-remote" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bs-modal-remote-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- end: REMOTE_MODAL -->
+
 
 @section scripts {
     <script>
@@ -74,6 +209,8 @@
                                 { data: "ApplicationName" },
                                 { data: "Description" },
                                 { data: "Status" },
+                                { data: null, render: function (data, type, full, meta) { return '<button id="bb-confirm" class="btn btn-warning margin-sm-bottom margin-sm-right" onclick="btnAct_DeleteApplication(' + data.Id + ');">' + data.Id + '</button>' } },
+                                { data: null, render: function (data, type, row) { return data.Id + ' - ' + data.ApplicationCode; } }
                             ]
                         });
 
@@ -82,11 +219,45 @@
                     }
                 }
             });
+            
+            srvAct_DeleteApplication = function (applicationId) {
+                $.cengaver.callService({
+                    service: 'Delete',
+                    request: {
+                        EntityId: applicationId,
+                    },
+                    onSuccess: function (response) {
+                        //alert("is it done !");
+                    }
+                });
+            };
+
+            btnAct_DeleteApplication = function(applicationId) {
+                bootbox.confirm("Are you sure want to delete? (" + applicationId + ")", function (result) {
+
+                    //alert("Confirm result: " + result);
+
+                    if (result == true)
+                    {
+                        srvAct_DeleteApplication(applicationId);
+                        //alert("Confirm result is true :" + result);
+                        window.location.reload();
+                    }
+                    //else 
+                    //{
+                    //    //alert("Confirm result is false :" + result);
+                    //}
+                });
+            };
         });
     </script>
     <script src="~/theme/assets/plugins/jquery-datatables/js/jquery.dataTables.js"></script>
-<script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.tableTools.js"></script>
-<script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.bootstrap.js"></script>
-<script src="~/theme/assets/plugins/jquery-select2/select2.min.js"></script>
-<script src="~/theme/demo/js/tables-data-tables.js"></script>
+    <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.tableTools.js"></script>
+    <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.bootstrap.js"></script>
+    <script src="~/theme/assets/plugins/jquery-select2/select2.min.js"></script>
+    <script src="~/theme/demo/js/tables-data-tables.js"></script>
+
+    @* modal için varsayılan alert confirm prompt ve custom  için gerekli iki eleman *@
+    <script src="~/theme/assets/plugins/bootbox/bootbox.js"></script>
+    <script src="~/theme/demo/js/ui-modals.js"></script>
 }

@@ -323,6 +323,7 @@
     <Content Include="Views\Membership\Account\Index.cshtml" />
     <Content Include="Views\Membership\Domain\Index.cshtml" />
     <Content Include="Views\Membership\Group\Index.cshtml" />
+    <Content Include="Views\Application\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
