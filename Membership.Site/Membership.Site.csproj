@@ -98,6 +98,8 @@
     <Compile Include="Core\Services\Models\ServiceError.cs" />
     <Compile Include="Core\Services\Models\ServiceRequest.cs" />
     <Compile Include="Core\Services\Models\ServiceResponse.cs" />
+    <Compile Include="Core\Services\Models\UpdateRequest.cs" />
+    <Compile Include="Core\Services\Models\UpdateResponse.cs" />
     <Compile Include="Core\StringHelper.cs" />
     <Compile Include="Module\WebUser\WebUserController.cs" />
     <Compile Include="Module\WebUser\WebUserModel.cs" />

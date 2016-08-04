@@ -4,6 +4,33 @@
     ViewBag.Title = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+@{
+
+    if (Model == null || Model.Exception == null)
+    {
+        <h1 class="text-danger">Error.</h1>
+        <h2 class="text-danger">An error occurred while processing your request.</h2>
+
+    }
+    else
+    {
+        <div class="container-fluid-md">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Something going wrong</h4>
+                    <div class="panel-options"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Exception Message</label>
+                        <div class="controls col-sm-6">
+                            <label>@Model.Exception.Message </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
 

@@ -91,6 +91,30 @@ namespace Membership.Business.Manager
             }
         }
 
+        public Application Retrieve(int ApplicationId)
+        {
+            try
+            {
+                var entity = new ApplicationRepository().GetById(ApplicationId);
+
+                if (entity == null || entity.IsDeleted == 1)
+                    throw new System.Exception("RecordNotFound");
+
+
+                return new Application()
+                {
+                    Id = entity.Id,
+                    ApplicationCode = entity.ApplicationCode,
+                    ApplicationName = entity.ApplicationName,
+                    Description = entity.Description,
+                    Status = entity.Status
+                };
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
 
         public void Update(Application Model)
         {
@@ -105,9 +129,11 @@ namespace Membership.Business.Manager
                 var entity = new ApplicationRepository().GetById(Model.Id.Value);
 
                 entity.ApplicationCode = Model.ApplicationCode;
-                entity.ApplicationCode = Model.ApplicationCode;
-                entity.ApplicationName = Model.ApplicationCode;
+                entity.ApplicationName = Model.ApplicationName;
                 entity.Description = Model.Description;
+
+                entity.UpdatedBy = this.CurrentUser.Id;
+                entity.UpdateTime = System.DateTime.Now;
 
                 new ApplicationRepository().Update(entity);
             }

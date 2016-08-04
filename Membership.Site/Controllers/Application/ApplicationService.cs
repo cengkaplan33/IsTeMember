@@ -83,5 +83,69 @@ namespace Membership.Site.Services
 
             return new DeleteResponse();
         }
+
+        public RetrieveResponse<ApplicationModel> Retrieve(RetrieveRequest request)
+        {
+            if (request.EntityId == null || request.EntityId <= 0)
+                throw new Exception("EntityId boş geçilemez");
+
+
+            //OK::NOT:: aşağıdaki şekilde WebUserManager a erişebilirim ama katmanlı yapı adına bu işlemi servis üzerinden yapacağım.
+            //new Membership.Business.Manager.WebUserManager().LoggedUser(System.Web.HttpContext.Current.User.Identity.Name);
+
+            var loggedUser = SecurityHelper.LoggerUserItem;
+
+            var model = new ApplicationManager(new Business.Model.WebUser()
+            {
+                Id = loggedUser.Id.Value,
+            }).Retrieve(request.EntityId.Value);
+
+            return new RetrieveResponse<ApplicationModel>()
+            {
+                Entity = new ApplicationModel()
+                {
+                    Id = model.Id.Value,
+                    ApplicationCode = model.ApplicationCode,
+                    ApplicationName = model.ApplicationName,
+                    Description = model.Description,
+                    Status = model.Status
+                }
+            };
+        }
+
+        public DeleteResponse Update(UpdateRequest<ApplicationModel> request)
+        {
+            if (request.Entity == null)
+                throw new Exception("Entity boş geçilemez");
+
+
+            //OK::NOT:: aşağıdaki şekilde WebUserManager a erişebilirim ama katmanlı yapı adına bu işlemi servis üzerinden yapacağım.
+            //new Membership.Business.Manager.WebUserManager().LoggedUser(System.Web.HttpContext.Current.User.Identity.Name);
+
+            var loggedUser = SecurityHelper.LoggerUserItem;
+
+            //new ApplicationManager(new Business.Model.WebUser()
+            //{
+            //    Id = loggedUser.Id.Value,
+            //}).Delete(request.EntityId.Value);
+
+
+
+
+            new ApplicationManager(new Business.Model.WebUser()
+            {
+                Id = loggedUser.Id.Value,
+            }).Update(new Business.Model.Application()
+            {
+                ApplicationCode = request.Entity.ApplicationCode,
+                ApplicationName = request.Entity.ApplicationName,
+                Description = request.Entity.Description,
+                Id= request.Entity.Id,
+            });
+
+
+
+            return new DeleteResponse();
+        }
     }
 }

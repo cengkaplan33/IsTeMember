@@ -37,8 +37,8 @@
                                         <th>ApplicationName</th>
                                         <th>Description</th>
                                         <th>Status</th>
-                                        <th>Render</th>
-                                        <th>Renderew</th>
+                                        <th>Delete</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody> </tbody>
@@ -49,8 +49,8 @@
                                         <th>ApplicationName</th>
                                         <th>Description</th>
                                         <th>Status</th>
-                                        <th>Render</th>
-                                        <th>Renderew</th>
+                                        <th>Delete</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -209,8 +209,11 @@
                                 { data: "ApplicationName" },
                                 { data: "Description" },
                                 { data: "Status" },
-                                { data: null, render: function (data, type, full, meta) { return '<button id="bb-confirm" class="btn btn-warning margin-sm-bottom margin-sm-right" onclick="btnAct_DeleteApplication(' + data.Id + ');">' + data.Id + '</button>' } },
-                                { data: null, render: function (data, type, row) { return data.Id + ' - ' + data.ApplicationCode; } }
+                                //{ data: null, render: function (data, type, full, meta) { return '<button class="fa-icon-edit" onclick="btnAct_DeleteApplication(' + data.Id + ');">' + data.Id + '</button>' } },
+                                { data: null, render: function (data, type, full, meta) { return ' <a href="#" data-rel="reload"><i class="fa fa-times fa-lg" onclick="btnAct_DeleteApplication(' + data.Id + ');" ></i></a> ' } },
+                                
+                                //{ data: null, render: function (data, type, row) { return data.Id + ' - ' + data.ApplicationCode; } },
+                                { data: null, render: function (data, type, full, meta) { return ' <a href="Edit/'+data.Id+'" data-rel="reload"><i class="fa fa-edit fa-lg"  ></i></a> ' } },
                             ]
                         });
 

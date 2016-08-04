@@ -35,5 +35,17 @@ namespace Membership.Site.Base
 
             return response.ToJsonResult();
         }
+
+        //public static System.Web.UI.WebControls.View RespondView(this BaseController controller, Func<System.Web.UI.WebControls.View> handler)
+        //{            
+        //    try
+        //    {
+        //        return handler();
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        return new System.Web.Mvc.ViewResult { View( } (Controller.View("~/Views/Shared/Error.cshtml", new System.Web.Mvc.HandleErrorInfo(exception, "controller", "action") { });
+        //    }
+        //}
     }
 }

@@ -4,1156 +4,43 @@
 <div class="page-content">
     <div class="page-subheading page-subheading-md">
         <ol class="breadcrumb">
-            <li><a href="javascript:;">Dashboard</a></li>
-            <li><a href="javascript:;">Forms</a></li>
-            <li class="active"><a href="javascript:;">Basic Elements</a></li>
+            <li><a href="javascript:;">Application</a></li>
+            <li class="active"><a href="javascript:;">Edit (@Model.Id)</a></li>
         </ol>
     </div>
-    <div class="page-heading page-heading-md">
-        <h2>Basic Elements</h2>
-    </div>
+
     <div class="container-fluid-md">
-        <form class="form-horizontal form-bordered" role="form">
+        <form id="ApplicationEditForm" class="form-horizontal form-bordered" role="form">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title">Basic Forms</h4>
-                    <div class="panel-options">
-                        <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
-                        <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
-                        <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
                     </div>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label class="control-label col-sm-3">Static Control</label>
+                        <label class="control-label col-sm-3">Code</label>
                         <div class="controls col-sm-6">
-                            <p class="form-control-static">
-                                john.doe@example.com
-                            </p>
+                            <input type="text" class="form-control" placeholder="Enter code" id="ApplicationCode" name="ApplicationCode" value="@Model.ApplicationCode.Trim()" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-3">Text Input</label>
+                        <label class="control-label col-sm-3">Name</label>
                         <div class="controls col-sm-6">
-                            <input type="text" class="form-control" placeholder="Enter username">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Email Input</label>
-                        <div class="controls col-sm-6">
-                            <input type="email" class="form-control" placeholder="Enter email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Help Text</label>
-                        <div class="controls col-sm-6">
-                            <input class="form-control" type="url" placeholder="Enter website">
-                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Read-Only Input</label>
-                        <div class="controls col-sm-6">
-                            <input type="text" class="form-control" readonly value="Read-Only Input">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Disabled Input</label>
-                        <div class="controls col-sm-6">
-                            <input type="text" class="form-control" disabled value="Disabled Input">
+                            <input type="text" class="form-control"  placeholder="Enter name" id="ApplicationName" name="ApplicationName" value="@Model.ApplicationName.Trim()" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3">Textarea</label>
                         <div class="controls col-sm-6">
-                            <textarea class="form-control" rows="4" placeholder="Textarea"></textarea>
+                            <textarea class="form-control" rows="4" placeholder="Enter description" id="Description" name="Description" >@Model.Description.Trim()</textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-3">Autogrow Textarea</label>
                         <div class="controls col-sm-6">
-                            <textarea class="form-control autogrow" rows="4"
-                                      placeholder="I will grow as you type new lines."></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Select</label>
-                        <div class="controls col-sm-6">
-                            <select class="form-control">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                                <option>Option 5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Multiple Select</label>
-                        <div class="controls col-sm-6">
-                            <select multiple class="form-control">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                                <option>Option 5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Checkbox Inline</label>
-                        <div class="controls col-sm-6">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" value="">
-                                One
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" value="" checked>
-                                Two
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" value="">
-                                Three
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Checkbox</label>
-                        <div class="controls col-sm-6">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    Option one is this and that&mdash;be sure to include why it's great
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    Option one is this and that&mdash;be sure to include why it's great
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="" disabled checked>
-                                    Checkbox disabled checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="" disabled>
-                                    Checkbox disabled
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Radio Inline</label>
-                        <div class="controls col-sm-6">
-                            <label class="radio-inline">
-                                <input type="radio" name="optionsRadios3" value="">
-                                One
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optionsRadios3" value="">
-                                Two
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optionsRadios3" value="" checked>
-                                Three
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Radio</label>
-                        <div class="controls col-sm-6">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                    Option one is this and that&mdash;be sure to include why it's great
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Option two can be something else and selecting it will deselect option one
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios2" value="option1" disabled checked>
-                                    Radio checked disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="optionsRadios2" value="option2" disabled>
-                                    Radio disabled
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group has-error">
-                        <label class="control-label col-sm-3">Error Input</label>
-                        <div class="controls col-sm-6">
-                            <input class="form-control" type="text">
-                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-                    </div>
-                    <div class="form-group has-warning">
-                        <label class="control-label col-sm-3">Warning Input</label>
-                        <div class="controls col-sm-6">
-                            <input class="form-control" type="text">
-                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-                    </div>
-                    <div class="form-group has-success">
-                        <label class="control-label col-sm-3">Success Input</label>
-                        <div class="controls col-sm-6">
-                            <input class="form-control" type="text">
-                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="control-label col-sm-3">Input Group Small</label>
-                        <div class="controls col-sm-6">
-                            <input type="text" class="form-control" placeholder="Enter username">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-lg">
-                        <label class="control-label col-sm-3">Input Group Large</label>
-                        <div class="controls col-sm-6">
-                            <input type="text" class="form-control" placeholder="Enter username">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Input Sizes</h4>
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
-                            <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
-                            <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="controls">
-                            <input type="text" placeholder=".input-lg" class="form-control input-lg">
-                            <br>
-                            <input type="text" placeholder="Default input" class="form-control">
-                            <br>
-                            <input type="text" placeholder=".input-sm" class="form-control input-sm">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Input Grid</h4>
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
-                            <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
-                            <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder=".col-xs-12">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder=".col-xs-6">
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder=".col-xs-6">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder=".col-xs-3">
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder=".col-xs-4">
-                                </div>
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder=".col-xs-5">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <form class="form-horizontal form-bordered">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Input Groups</h4>
-                    <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with an <code>.input-group-addon</code> to prepend or append elements to a single <code>.form-control</code>.</p>
-                    <div class="panel-options">
-                        <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
-                        <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
-                        <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Basic example</label>
-                        <div class="controls col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-addon">@Model.ApplicationCode</span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">.00</span>
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Sizing</label>
-                        <div class="controls col-sm-6">
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-addon">@Model.ApplicationCode</span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon">@Model.ApplicationCode</span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-addon">@Model.ApplicationCode</span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Checkboxes & radio</label>
-                        <div class="controls col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox">
-                                </span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio">
-                                </span>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Button addons</label>
-                        <div class="controls col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="button">Go!</button>
-                                </span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="button">Go!</button>
-                                </span>
-                            </div>
-                            <div class="input-group">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:;">Action</a></li>
-                                        <li><a href="javascript:;">Another action</a></li>
-                                        <li><a href="javascript:;">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="javascript:;">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:;">Action</a></li>
-                                        <li><a href="javascript:;">Another action</a></li>
-                                        <li><a href="javascript:;">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="javascript:;">Separated link</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-3">Segmented buttons</label>
-                        <div class="controls col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-btn">
-                                    <button tabindex="-1" class="btn btn-success" type="button">Action</button>
-                                    <button tabindex="-1" data-toggle="dropdown" class="btn btn-success dropdown-toggle" type="button">
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <ul role="menu" class="dropdown-menu">
-                                        <li><a href="javascript:;">Action</a></li>
-                                        <li><a href="javascript:;">Another action</a></li>
-                                        <li><a href="javascript:;">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="javascript:;">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <div class="input-group-btn">
-                                    <button tabindex="-1" class="btn btn-success" type="button">Action</button>
-                                    <button tabindex="-1" data-toggle="dropdown" class="btn btn-success dropdown-toggle" type="button">
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <ul role="menu" class="dropdown-menu pull-right">
-                                        <li><a href="javascript:;">Action</a></li>
-                                        <li><a href="javascript:;">Another action</a></li>
-                                        <li><a href="javascript:;">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="javascript:;">Separated link</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <form class="form-horizontal form-bordered" autocomplete="off">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Custom Checkbox & Radio (iCheck)</h4>
-                    <p><strong>Attention!</strong> Only in demo, you can toggle iCheck radio elements.</p>
-                    <div class="panel-options">
-                        <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
-                        <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
-                        <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Square Checkbox</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square">
-                                    Square Checkbox
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square" checked>
-                                    Square Checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square" disabled>
-                                    Square Disabled
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square" disabled checked>
-                                    Square Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-aero" checked>
-                                    Square Aero
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-blue" checked>
-                                    Square Blue
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-green" checked>
-                                    Square Green
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-grey" checked>
-                                    Square Grey
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-orange" checked>
-                                    Square Orange
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-red" checked>
-                                    Square Red
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck square-yellow" checked>
-                                    Square Yellow
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Square Radio</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioSquare" class="icheck square">
-                                    Square Radio
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioSquare" class="icheck square" checked>
-                                    Square Checked
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square" disabled>
-                                    Square Disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square" disabled checked>
-                                    Square Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-aero" checked>
-                                    Square Aero
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-blue" checked>
-                                    Square Blue
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-green" checked>
-                                    Square Green
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-grey" checked>
-                                    Square Grey
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-orange" checked>
-                                    Square Orange
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-red" checked>
-                                    Square Red
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck square-yellow" checked>
-                                    Square Yellow
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Flat Checkbox</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat">
-                                    Flat Checkbox
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat" checked>
-                                    Flat Checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat" disabled>
-                                    Flat Disabled
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat" disabled checked>
-                                    Flat Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-aero" checked>
-                                    Flat Aero
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-blue" checked>
-                                    Flat Blue
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-green" checked>
-                                    Flat Green
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-grey" checked>
-                                    Flat Grey
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-orange" checked>
-                                    Flat Orange
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-red" checked>
-                                    Flat Red
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck flat-yellow" checked>
-                                    Flat Yellow
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Flat Radio</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioFlat" class="icheck flat">
-                                    Flat Radio
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioFlat" class="icheck flat" checked>
-                                    Flat Checked
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat" disabled>
-                                    Flat Disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat" disabled checked>
-                                    Flat Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-aero" checked>
-                                    Flat Aero
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-blue" checked>
-                                    Flat Blue
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-green" checked>
-                                    Flat Green
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-grey" checked>
-                                    Flat Grey
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-orange" checked>
-                                    Flat Orange
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-red" checked>
-                                    Flat Red
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck flat-yellow" checked>
-                                    Flat Yellow
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Line Checkbox</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line">
-                                    Line Checkbox
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line" checked>
-                                    Line Checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line" disabled>
-                                    Line Disabled
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line" disabled checked>
-                                    Line Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-aero" checked>
-                                    Line Aero
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-blue" checked>
-                                    Line Blue
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-green" checked>
-                                    Line Green
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-grey" checked>
-                                    Line Grey
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-orange" checked>
-                                    Line Orange
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-red" checked>
-                                    Line Red
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck line-yellow" checked>
-                                    Line Yellow
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Line Radio</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioLine" class="icheck line">
-                                    Line Radio
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioLine" class="icheck line" checked>
-                                    Line Checked
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line" disabled>
-                                    Line Disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line" disabled checked>
-                                    Line Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-aero" checked>
-                                    Line Aero
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-blue" checked>
-                                    Line Blue
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-green" checked>
-                                    Line Green
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-grey" checked>
-                                    Line Grey
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-orange" checked>
-                                    Line Orange
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-red" checked>
-                                    Line Red
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck line-yellow" checked>
-                                    Line Yellow
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Minimal Checkbox</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal">
-                                    Minimal Checkbox
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal" checked>
-                                    Minimal Checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal" disabled>
-                                    Minimal Disabled
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal" disabled checked>
-                                    Minimal Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-aero" checked>
-                                    Minimal Aero
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-blue" checked>
-                                    Minimal Blue
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-green" checked>
-                                    Minimal Green
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-grey" checked>
-                                    Minimal Grey
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-orange" checked>
-                                    Minimal Orange
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-red" checked>
-                                    Minimal Red
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck minimal-yellow" checked>
-                                    Minimal Yellow
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Minimal Radio</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioMinimal" class="icheck minimal">
-                                    Minimal Radio
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioMinimal" class="icheck minimal" checked>
-                                    Minimal Checked
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal" disabled>
-                                    Minimal Disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal" disabled checked>
-                                    Minimal Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Colors</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-aero" checked>
-                                    Minimal Aero
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-blue" checked>
-                                    Minimal Blue
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-green" checked>
-                                    Minimal Green
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-grey" checked>
-                                    Minimal Grey
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-orange" checked>
-                                    Minimal Orange
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-red" checked>
-                                    Minimal Red
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck minimal-yellow" checked>
-                                    Minimal Yellow
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Futurico Checkbox</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck futurico">
-                                    Futurico Checkbox
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck futurico" checked>
-                                    Futurico Checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck futurico" disabled>
-                                    Futurico Disabled
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck futurico" disabled checked>
-                                    Futurico Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Futurico Radio</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioFuturico" class="icheck futurico">
-                                    Futurico Radio
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioFuturico" class="icheck futurico" checked>
-                                    Futurico Checked
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck futurico" disabled>
-                                    Futurico Disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck futurico" disabled checked>
-                                    Futurico Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Polaris Checkbox</h4>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck polaris">
-                                    Polaris Checkbox
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck polaris" checked>
-                                    Polaris Checked
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck polaris" disabled>
-                                    Polaris Disabled
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" class="icheck polaris" disabled checked>
-                                    Polaris Disabled Checked
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h4 class="thin">Polaris Radio</h4>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioPolaris" class="icheck polaris">
-                                    Polaris Radio
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="radioPolaris" class="icheck polaris" checked>
-                                    Polaris Checked
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck polaris" disabled>
-                                    Polaris Disabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="icheck polaris" disabled checked>
-                                    Polaris Disabled Checked
-                                </label>
-                            </div>
+                            <input type="hidden" id="Id" name="Id" value="@Model.Id" />
                         </div>
                     </div>
                 </div>
@@ -1162,14 +49,161 @@
     </div>
 </div>
 
-
-
-
-
+ 
+        @*<div class="page-content">
+            <div class="page-subheading page-subheading-md">
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">Dashboard</a></li>
+                    <li><a href="javascript:;">Forms</a></li>
+                    <li class="active"><a href="javascript:;">Form Validation</a></li>
+                </ol>
+            </div>
+            <div class="page-heading page-heading-md">
+                <h2>Form Validation</h2>
+            </div>
+            <div class="container-fluid-md">
+                <div class="row">
+                    <div class="col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
+                        <form class="form-horizontal" novalidate>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">Form Validation</h4>
+                                    <div class="panel-options">
+                                        <a href="#" data-rel="collapse"><i class="fa fa-fw fa-minus"></i></a>
+                                        <a href="#" data-rel="reload"><i class="fa fa-fw fa-refresh"></i></a>
+                                        <a href="#" data-rel="close"><i class="fa fa-fw fa-times"></i></a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3">Textarea</label>
+                                        <div class="controls col-sm-6">
+                                            <textarea class="form-control" rows="4" placeholder="Enter description"> @Model.ApplicationName</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4">Username <span class="asterisk">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" name="username" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4">Email <span class="asterisk">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" name="email" type="email" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4">Password <span class="asterisk">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="password" name="password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4">Password Again <span class="asterisk">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="password" name="passwordAgain">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4">Website</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="url">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4">Gender <span class="asterisk">*</span></label>
+                                        <div class="col-sm-8">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" required="" name="gender" value="m">
+                                                    Male
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" required="" name="gender" value="f">
+                                                    Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <button type="submit" class="btn btn-primary">Sign in</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+  
 
 @section scripts {
     <script>
-        $(document).ready(function () { /// $ not defined.
+        $(document).ready(function () {
+
+            //$("button#submit").click(function(){
+
+            $("#ApplicationEditForm").submit(function(event)
+            {
+                //OK::NOT:: submit even'i ni durdurmak için. istersen submit yerine kendin click event 'ini de kullanabilirsin :)
+                event.preventDefault();
+            
+                if ($("#ApplicationEditForm").valid()) {
+                    alert("done " + $('#ApplicationEditForm').serialize());
+                    $.cengaver.callService({
+                        service: '/Application/Update',
+                        request: {
+                            Entity: {
+                                Id: $('#Id').val().trim(),
+                                ApplicationCode: $('#ApplicationCode').val().trim(),
+                                ApplicationName: $('#ApplicationName').val().trim(),
+                                Description: $('#Description').val().trim(),
+                            }
+                        },
+                        onSuccess: function (response) {
+                            if (response.Error != undefined || response.Error == null) {
+
+                            }
+                            else
+                                alert(response.Error.Message)
+                        }
+                    });
+                }
+                else {
+                    alert("false");
+                }
+            });
+            
+
+            //$('#ApplicationEditForm').validate(
+            //{
+            //    rules: {
+            //        ApplicationCode: {
+            //            required: true
+            //        },
+            //        ApplicationName: {
+            //            required: true,
+            //            email: true
+            //        },
+            //    },
+            //    errorClass: "help-inline",
+            //    highlight: function(label) {
+            //        $(label).closest('.control-group').removeClass('success').addClass('error');
+            //    },
+            //    success: function(label) {
+            //        label
+            //          .text('OK!').addClass('valid')
+            //          .closest('.control-group').addClass('success');
+            //    }
+
+
             //$.cengaver.BlockUI();
 
             //var oTable = $('#table-basicv').dataTable();
@@ -1253,4 +287,6 @@
     @* modal için varsayılan alert confirm prompt ve custom  için gerekli iki eleman *@
     <script src="~/theme/assets/plugins/bootbox/bootbox.js"></script>
     <script src="~/theme/demo/js/ui-modals.js"></script>
+
+    
 }

@@ -18,12 +18,23 @@ namespace Membership.Site.Controllers
         }
 
         // GET: Application
-        public ActionResult Edit()
+        public ActionResult Edit( int? id)
         {
+            try
+            {
+                var response = new ApplicationService().Retrieve(new RetrieveRequest() { EntityId = id });
 
-            var model = new ApplicationModel() { Id = 2, ApplicationCode = "plesk0101", ApplicationName = "Server Panel", Description = "For YOU", Status = 1 };
-            return View(model);
-        
+                //var i = 0;
+                //var d = 4 / i;
+                return View(response.Entity);
+
+            }
+            catch (Exception exception)
+            {
+                var sss = ControllerContext;
+                return View("~/Views/Shared/Error.cshtml", new System.Web.Mvc.HandleErrorInfo(exception, ControllerContext.RouteData.Values["Controller"].ToString(), ControllerContext.RouteData.Values["Action"].ToString()) { });
+            }
+            //var model = new ApplicationModel() { Id = 2, ApplicationCode = "plesk0101", ApplicationName = "Server Panel", Description = "For YOU", Status = 1 };
         }
 
         [HttpPost]
@@ -36,6 +47,12 @@ namespace Membership.Site.Controllers
         public ActionResult Delete(DeleteRequest request)
         {
             return this.Respond(() => new ApplicationService().Delete(request));
+        }
+
+        [HttpPost]
+        public ActionResult Update(UpdateRequest<ApplicationModel> request)
+        {
+            return this.Respond(() => new ApplicationService().Update(request));
         }
 
         //public class AuditEntryController : GenericEntityController<AuditEntryRow, AuditEntryService, AuditEntryListRequest>
