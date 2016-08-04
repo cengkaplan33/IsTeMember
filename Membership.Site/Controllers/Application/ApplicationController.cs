@@ -22,12 +22,18 @@ namespace Membership.Site.Controllers
         {
             try
             {
-                var response = new ApplicationService().Retrieve(new RetrieveRequest() { EntityId = id });
+                if (id <= 0)
+                {
+                    return View(new ApplicationModel { Id = -1 });
+                }
+                else
+                {
+                    var response = new ApplicationService().Retrieve(new RetrieveRequest() { EntityId = id });
+                    return View(response.Entity);
+                }
 
                 //var i = 0;
                 //var d = 4 / i;
-                return View(response.Entity);
-
             }
             catch (Exception exception)
             {

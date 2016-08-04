@@ -5,7 +5,7 @@
     <div class="page-subheading page-subheading-md">
         <ol class="breadcrumb">
             <li><a href="javascript:;">Application</a></li>
-            <li class="active"><a href="javascript:;">Edit (@Model.Id)</a></li>
+            <li class="active"><a href="javascript:;">  @( (Model == null ? "New" : ( Model.Id > 0 ? "Edit": "New")))</a></li>
         </ol>
     </div>
 
