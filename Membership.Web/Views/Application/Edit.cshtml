@@ -1,11 +1,17 @@
 ﻿@using myMembershipModel = Membership.Site.Model;
 @model  myMembershipModel.ApplicationModel
 
+@{
+    
+    if (Model == null)
+    {
+        <span> @Model.Id</span>
+    }
+}
 <div class="page-content">
     <div class="page-subheading page-subheading-md">
         <ol class="breadcrumb">
-            <li><a href="javascript:;">Application</a></li>
-            <li class="active"><a href="javascript:;">  @( (Model == null ? "New" : ( Model.Id > 0 ? "Edit": "New")))</a></li>
+            <li><a href="javascript:;">Application</a></li> 
         </ol>
     </div>
 
@@ -23,19 +29,19 @@
                     <div class="form-group">
                         <label class="control-label col-sm-3">Code</label>
                         <div class="controls col-sm-6">
-                            <input type="text" class="form-control" placeholder="Enter code" id="ApplicationCode" name="ApplicationCode" value="@Model.ApplicationCode.Trim()" required>
+                            <input type="text" class="form-control" placeholder="Enter code" id="ApplicationCode" name="ApplicationCode" value="@((Model.ApplicationCode??"").Trim())" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3">Name</label>
                         <div class="controls col-sm-6">
-                            <input type="text" class="form-control"  placeholder="Enter name" id="ApplicationName" name="ApplicationName" value="@Model.ApplicationName.Trim()" required>
+                            <input type="text" class="form-control" placeholder="Enter name" id="ApplicationName" name="ApplicationName" value="@((Model.ApplicationName??"").Trim())" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3">Textarea</label>
                         <div class="controls col-sm-6">
-                            <textarea class="form-control" rows="4" placeholder="Enter description" id="Description" name="Description" >@Model.Description.Trim()</textarea>
+                            <textarea class="form-control" rows="4" placeholder="Enter description" id="Description" name="Description" >@((Model.Description??"").Trim())</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -154,11 +160,11 @@
             {
                 //OK::NOT:: submit even'i ni durdurmak için. istersen submit yerine kendin click event 'ini de kullanabilirsin :)
                 event.preventDefault();
-            
+                var id = $('#Id').val().trim();
                 if ($("#ApplicationEditForm").valid()) {
-                    alert("done " + $('#ApplicationEditForm').serialize());
+                   // alert("done " + $('#ApplicationEditForm').serialize());
                     $.cengaver.callService({
-                        service: '/Application/Update',
+                        service: (id > 0 ?'/Application/Update' : '/Application/Create'),
                         request: {
                             Entity: {
                                 Id: $('#Id').val().trim(),
@@ -170,14 +176,24 @@
                         onSuccess: function (response) {
                             if (response.Error != undefined || response.Error == null) {
 
+                                if (id > 0)
+                                    return;
+                                else {
+                                    if (response.EntityId > 0) {
+                                        window.location.href = window.location.origin + "/Application/Edit/" + response.EntityId;
+                                    }
+                                    else
+                                        alert("Kayıt esnasında beklenmedik bir hata oluştu. Lütfen sayfayı yeniledikten sonra tekrar deneyiniz.");
+                                }
                             }
                             else
-                                alert(response.Error.Message)
-                        }
+                                alert(response.Error.Message);
+                            
+                        },
                     });
                 }
                 else {
-                    alert("false");
+                    alert("Lütfen zorunlu alanları doldurunuz!");
                 }
             });
             
@@ -267,10 +283,26 @@
             //};
         });
     </script>
-     
-    
 
-    
+
+    <!--[if lt IE 9]>
+    <script src="dist/assets/plugins/flot/excanvas.min.js"></script>
+    <![endif]-->
+    @*form sayfasında kullanılan unique js ler*@
+    <script src="~/theme/demo/js/forms-basic-elements.js"></script>
+    <script src="~/theme/assets/plugins/jquery-autogrow-textarea/jquery.autogrow-textarea.js"></script>
+    <script src="~/theme/js/icheck.js"></script>
+
+
+    <script src="~/theme/assets/plugins/jquery-datatables/js/jquery.dataTables.js"></script>
+    <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.tableTools.js"></script>
+    <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.bootstrap.js"></script>
+    <script src="~/theme/assets/plugins/jquery-select2/select2.min.js"></script>
+    <script src="~/theme/demo/js/tables-data-tables.js"></script>
+
+    @* modal için varsayılan alert confirm prompt ve custom  için gerekli iki eleman *@
+    <script src="~/theme/assets/plugins/bootbox/bootbox.js"></script>
+    <script src="~/theme/demo/js/ui-modals.js"></script>
 
     
 }

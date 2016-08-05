@@ -1,6 +1,7 @@
 using Membership.Core.Domain;
 using Membership.Core.Domain.Account;
 using Membership.Core.Domain.Application;
+using Membership.Core.Domain.Directory;
 using Membership.Core.Domain.Web;
 using System;
 using System.Data.Entity;
@@ -33,6 +34,7 @@ namespace Membership.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<AccountAddress> AccountAddresses { get; set; }
         public DbSet<Application> Applications { get; set; }
+        public DbSet<Directory> Directories { get; set; }
         public DbSet<WebUser> WebUsers { get; set; }
         public DbSet<WebUserIp> WebUserIps { get; set; }
 

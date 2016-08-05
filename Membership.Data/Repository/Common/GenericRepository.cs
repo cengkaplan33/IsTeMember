@@ -78,6 +78,8 @@ namespace Membership.Data.Repository
                 this.dbSet.Add(entity);
               
             }
+
+            this.GenericDBContext.SaveChanges();
         }
 
         public void Update(T entity)

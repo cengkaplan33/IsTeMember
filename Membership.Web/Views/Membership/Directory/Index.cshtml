@@ -2,7 +2,7 @@
 
             <div class="page-subheading page-subheading-md">
                 <ol class="breadcrumb">
-                    <li><a href="javascript:;">Application</a></li>
+                    <li><a href="javascript:;">Directory</a></li>
                     <li class="active"><a href="javascript:;">List</a></li>
                 </ol>
             </div>
@@ -38,8 +38,8 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>ApplicationCode</th>
-                                        <th>ApplicationName</th>
+                                        <th>DirectoryCode</th>
+                                        <th>DirectoryName</th>
                                         <th>Description</th>
                                         <th>Status</th>
                                         <th>Delete</th>
@@ -50,8 +50,8 @@
                                 <tfoot>
                                     <tr>
                                         <th>Id</th>
-                                        <th>ApplicationCode</th>
-                                        <th>ApplicationName</th>
+                                        <th>DirectoryCode</th>
+                                        <th>DirectoryName</th>
                                         <th>Description</th>
                                         <th>Status</th>
                                         <th>Delete</th>
@@ -65,7 +65,7 @@
  
             </div>
 
-<div class="col-md-4">
+@*<div class="col-md-4">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">Modal Sizes</h4>
@@ -84,7 +84,7 @@
             <button class="btn btn-primary" data-toggle="modal" data-target="#bs-modal-sm">Small modal</button>
         </div>
     </div>
-</div>
+</div>*@
  
 <!-- start: DEFAULT_MODAL -->
 <div id="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bs-modal-title" aria-hidden="true">
@@ -210,29 +210,29 @@
                             data: response.Entities,
                             columns: [
                                 { data: "Id" },
-                                { data: "ApplicationCode" },
-                                { data: "ApplicationName" },
+                                { data: "DirectoryCode" },
+                                { data: "DirectoryName" },
                                 { data: "Description" },
                                 { data: "Status" },
-                                //{ data: null, render: function (data, type, full, meta) { return '<button class="fa-icon-edit" onclick="btnAct_DeleteApplication(' + data.Id + ');">' + data.Id + '</button>' } },
-                                { data: null, render: function (data, type, full, meta) { return ' <a href="#" data-rel="reload"><i class="fa fa-times fa-lg" onclick="btnAct_DeleteApplication(' + data.Id + ');" ></i></a> ' } },
+                                //{ data: null, render: function (data, type, full, meta) { return '<button class="fa-icon-edit" onclick="btnAct_DeleteDirectory(' + data.Id + ');">' + data.Id + '</button>' } },
+                                { data: null, render: function (data, type, full, meta) { return ' <a href="#" data-rel="reload"><i class="fa fa-times fa-lg" onclick="btnAct_DeleteDirectory(' + data.Id + ');" ></i></a> ' } },
                                 
-                                //{ data: null, render: function (data, type, row) { return data.Id + ' - ' + data.ApplicationCode; } },
+                                //{ data: null, render: function (data, type, row) { return data.Id + ' - ' + data.DirectoryCode; } },
                                 { data: null, render: function (data, type, full, meta) { return ' <a href="Edit/'+data.Id+'" data-rel="reload"><i class="fa fa-edit fa-lg"  ></i></a> ' } },
                             ]
                         });
 
                         //for (var i = 0; i < response.Entities.length; i++)
-                        //    alert(response.Entities[i].Application)
+                        //    alert(response.Entities[i].Directory)
                     }
                 }
             });
             
-            srvAct_DeleteApplication = function (applicationId) {
+            srvAct_DeleteDirectory = function (DirectoryId) {
                 $.cengaver.callService({
                     service: 'Delete',
                     request: {
-                        EntityId: applicationId,
+                        EntityId: DirectoryId,
                     },
                     onSuccess: function (response) {
                         //alert("is it done !");
@@ -241,14 +241,14 @@
                 });
             };
 
-            btnAct_DeleteApplication = function(applicationId) {
-                bootbox.confirm("Are you sure want to delete? (" + applicationId + ")", function (result) {
+            btnAct_DeleteDirectory = function(DirectoryId) {
+                bootbox.confirm("Are you sure want to delete? (" + DirectoryId + ")", function (result) {
 
                     //alert("Confirm result: " + result);
 
                     if (result == true)
                     {
-                        srvAct_DeleteApplication(applicationId);
+                        srvAct_DeleteDirectory(DirectoryId);
                         //alert("Confirm result is true :" + result);
                      
                     }

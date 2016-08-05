@@ -80,6 +80,9 @@
     <Compile Include="Controllers\Application\DomainController.cs" />
     <Compile Include="Controllers\Application\GroupController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\Directory\DirectoryController.cs" />
+    <Compile Include="Controllers\Directory\DirectoryModel.cs" />
+    <Compile Include="Controllers\Directory\DirectoryService.cs" />
     <Compile Include="Core\ContextItems.cs" />
     <Compile Include="Core\ServiceHandler.cs" />
     <Compile Include="Core\Services\Helpers\AuthorizationFilter.cs" />
@@ -89,6 +92,8 @@
     <Compile Include="Core\Services\Helpers\Json\JsonNetResult.cs" />
     <Compile Include="Core\Services\Helpers\LogActionFilter.cs" />
     <Compile Include="Core\Services\Helpers\MVCUtility.cs" />
+    <Compile Include="Core\Services\Models\CreateRequest.cs" />
+    <Compile Include="Core\Services\Models\CreateResponse.cs" />
     <Compile Include="Core\Services\Models\DeleteResponse.cs" />
     <Compile Include="Core\Services\Models\DeleteRequest.cs" />
     <Compile Include="Core\Services\Models\ListRequest.cs" />
@@ -110,11 +115,7 @@
     <Compile Include="System\Security\LoginPageModel.cs" />
     <Compile Include="System\Security\SecurityHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Module\Application\" />
-    <Folder Include="Module\Domain\" />
-    <Folder Include="Module\Group\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

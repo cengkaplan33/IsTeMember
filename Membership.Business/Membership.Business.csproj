@@ -50,8 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager\ApplicationManager.cs" />
+    <Compile Include="Manager\BaseManager.cs" />
+    <Compile Include="Manager\DirectoryManager.cs" />
     <Compile Include="Manager\WebUserManager.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Directory.cs" />
     <Compile Include="Models\Web\WebUser.cs" />
     <Compile Include="Models\Web\WebUserIp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

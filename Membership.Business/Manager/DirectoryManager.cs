@@ -7,26 +7,26 @@ using System.Linq;
 
 namespace Membership.Business.Manager
 {
-    public class ApplicationManager : BaseManager
+    public class DirectoryManager : BaseManager
     {
 
-        public ApplicationManager()
+        public DirectoryManager()
         {
         }
 
-        public ApplicationManager(WebUser User)
+        public DirectoryManager(WebUser User)
         {
             this.CurrentUser = User;
         }
 
-        public List<Application> List()
+        public List<Directory> List()
         {
-            var entities = new ApplicationRepository().GetObjectsByParameters(p => (p.IsDeleted != null && p.IsDeleted.Value == 0))
-                .Select(entity => new Application()
+            var entities = new DirectoryRepository().GetObjectsByParameters(p => ( p.IsDeleted == null || (p.IsDeleted != null && p.IsDeleted.Value == 0)))
+                .Select(entity => new Directory()
                 {
                     Id = entity.Id,
-                    ApplicationCode = entity.ApplicationCode,
-                    ApplicationName = entity.ApplicationName,
+                    DirectoryCode = entity.DirectoryCode,
+                    DirectoryName = entity.DirectoryName,
                     Description = entity.Description,
                     Status = entity.Status
                 }).ToList();
@@ -40,11 +40,11 @@ namespace Membership.Business.Manager
                 return entities;
         }
 
-        public bool Delete(int ApplicationId)
+        public bool Delete(int DirectoryId)
         {
             try
             {
-                var entity = new ApplicationRepository().GetById(ApplicationId);
+                var entity = new DirectoryRepository().GetById(DirectoryId);
 
                 if (entity == null || entity.IsDeleted == 1)
                     return true;
@@ -53,7 +53,7 @@ namespace Membership.Business.Manager
                     entity.DeletedBy = this.CurrentUser.Id;
                     entity.IsDeleted = 1;
 
-                    new ApplicationRepository()
+                    new DirectoryRepository()
                         .Update(entity);
                 }
 
@@ -65,21 +65,21 @@ namespace Membership.Business.Manager
             }
         }
 
-        public Application Retrieve(int ApplicationId)
+        public Directory Retrieve(int DirectoryId)
         {
             try
             {
-                var entity = new ApplicationRepository().GetById(ApplicationId);
+                var entity = new DirectoryRepository().GetById(DirectoryId);
 
                 if (entity == null || entity.IsDeleted == 1)
                     throw new System.Exception("RecordNotFound");
 
 
-                return new Application()
+                return new Directory()
                 {
                     Id = entity.Id,
-                    ApplicationCode = entity.ApplicationCode,
-                    ApplicationName = entity.ApplicationName,
+                    DirectoryCode = entity.DirectoryCode,
+                    DirectoryName = entity.DirectoryName,
                     Description = entity.Description,
                     Status = entity.Status
                 };
@@ -90,7 +90,7 @@ namespace Membership.Business.Manager
             }
         }
 
-        public void Update(Application Model)
+        public void Update(Directory Model)
         {
             try
             {
@@ -100,16 +100,16 @@ namespace Membership.Business.Manager
                 if (Model.Id == null)
                     throw new System.Exception("EntityId is null");
 
-                var entity = new ApplicationRepository().GetById(Model.Id.Value);
+                var entity = new DirectoryRepository().GetById(Model.Id.Value);
 
-                entity.ApplicationCode = Model.ApplicationCode;
-                entity.ApplicationName = Model.ApplicationName;
+                entity.DirectoryCode = Model.DirectoryCode;
+                entity.DirectoryName = Model.DirectoryName;
                 entity.Description = Model.Description;
 
                 entity.UpdatedBy = this.CurrentUser.Id;
                 entity.UpdateTime = System.DateTime.Now;
 
-                new ApplicationRepository().Update(entity);
+                new DirectoryRepository().Update(entity);
             }
             catch (System.Exception)
             {
@@ -117,7 +117,7 @@ namespace Membership.Business.Manager
             }
         }
 
-        public int? Create(Application Model)
+        public int? Create(Directory Model)
         {
             try
             {
@@ -125,10 +125,10 @@ namespace Membership.Business.Manager
                     throw new Exception("Entity boş olamaz");
 
 
-                var entity = new Core.Domain.Application.Application()
+                var entity = new Core.Domain.Directory.Directory()
                 {
-                    ApplicationCode = Model.ApplicationCode,
-                    ApplicationName = Model.ApplicationName,
+                    DirectoryCode = Model.DirectoryCode,
+                    DirectoryName = Model.DirectoryName,
                     Description =Model.Description,
                     CreatedBy = CurrentUser.Id,
                     CreateTime = DateTime.Now,
@@ -136,7 +136,7 @@ namespace Membership.Business.Manager
                     Status = 0
                 };
 
-                new ApplicationRepository().Add(entity);
+                new DirectoryRepository().Add(entity);
 
                 return entity.Id;
 

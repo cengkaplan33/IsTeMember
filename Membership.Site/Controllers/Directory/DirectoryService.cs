@@ -7,43 +7,43 @@ using System.Linq;
 namespace Membership.Site.Services
 {
 
-    public class ApplicationListRequest : ListRequest
+    public class DirectoryListRequest : ListRequest
     {
         public int TaskId { get; set; }
     }
 
-    public partial class ApplicationService
+    public partial class DirectoryService
     {
-        public ListResponse<ApplicationModel> List(ApplicationListRequest request)
+        public ListResponse<DirectoryModel> List(DirectoryListRequest request)
         {
-            ListResponse<ApplicationModel> response = new ListResponse<ApplicationModel>();
+            ListResponse<DirectoryModel> response = new ListResponse<DirectoryModel>();
 
-            var applications = new ApplicationManager().List();
+            var Directorys = new DirectoryManager().List();
 
-            if (applications == null || applications.Count == 0)
+            if (Directorys == null || Directorys.Count == 0)
                 return response;
 
 
 
-            response.Entities = applications.Select(entity => new ApplicationModel()
+            response.Entities = Directorys.Select(entity => new DirectoryModel()
             {
                 Id = entity.Id.Value,
-                ApplicationCode = entity.ApplicationCode,
-                ApplicationName = entity.ApplicationName,
+                DirectoryCode = entity.DirectoryCode,
+                DirectoryName = entity.DirectoryName,
                 Description = entity.Description ?? "",
                 Status = entity.Status
             }).ToList();
             //    .ToList();
 
 
-            //response.Entities = new System.Collections.Generic.List<ApplicationModel>();
-            //response.Entities.Add(new ApplicationModel() { ApplicationId = 1, Application = "Reseller Plesk Panel" });
-            //response.Entities.Add(new ApplicationModel() { ApplicationId = 2, Application = "Reseller Cloud Server Manager" });
-            //response.Entities.Add(new ApplicationModel() { ApplicationId = 3, Application = "Admin Plesk Panel" });
-            //response.Entities.Add(new ApplicationModel() { ApplicationId = 4, Application = "Admin Cloud Server Manager" });
+            //response.Entities = new System.Collections.Generic.List<DirectoryModel>();
+            //response.Entities.Add(new DirectoryModel() { DirectoryId = 1, Directory = "Reseller Plesk Panel" });
+            //response.Entities.Add(new DirectoryModel() { DirectoryId = 2, Directory = "Reseller Cloud Server Manager" });
+            //response.Entities.Add(new DirectoryModel() { DirectoryId = 3, Directory = "Admin Plesk Panel" });
+            //response.Entities.Add(new DirectoryModel() { DirectoryId = 4, Directory = "Admin Cloud Server Manager" });
 
             //for (int i = 5; i < 20; i++)
-            //    response.Entities.Add(new ApplicationModel() { ApplicationId = i, Application = " Admin " + i + " Cloud Server Manager" });
+            //    response.Entities.Add(new DirectoryModel() { DirectoryId = i, Directory = " Admin " + i + " Cloud Server Manager" });
 
             return response;
         }
@@ -76,7 +76,7 @@ namespace Membership.Site.Services
 
             var loggedUser = SecurityHelper.LoggerUserItem;
 
-            new ApplicationManager(new Business.Model.WebUser()
+            new DirectoryManager(new Business.Model.WebUser()
             {
                 Id = loggedUser.Id.Value,
             }).Delete(request.EntityId.Value);
@@ -84,7 +84,7 @@ namespace Membership.Site.Services
             return new DeleteResponse();
         }
 
-        public RetrieveResponse<ApplicationModel> Retrieve(RetrieveRequest request)
+        public RetrieveResponse<DirectoryModel> Retrieve(RetrieveRequest request)
         {
             if (request.EntityId == null || request.EntityId <= 0)
                 throw new Exception("EntityId boş geçilemez");
@@ -95,25 +95,25 @@ namespace Membership.Site.Services
 
             var loggedUser = SecurityHelper.LoggerUserItem;
 
-            var model = new ApplicationManager(new Business.Model.WebUser()
+            var model = new DirectoryManager(new Business.Model.WebUser()
             {
                 Id = loggedUser.Id.Value,
             }).Retrieve(request.EntityId.Value);
 
-            return new RetrieveResponse<ApplicationModel>()
+            return new RetrieveResponse<DirectoryModel>()
             {
-                Entity = new ApplicationModel()
+                Entity = new DirectoryModel()
                 {
                     Id = model.Id.Value,
-                    ApplicationCode = model.ApplicationCode,
-                    ApplicationName = model.ApplicationName,
+                    DirectoryCode = model.DirectoryCode,
+                    DirectoryName = model.DirectoryName,
                     Description = model.Description,
                     Status = model.Status
                 }
             };
         }
 
-        public DeleteResponse Update(UpdateRequest<ApplicationModel> request)
+        public DeleteResponse Update(UpdateRequest<DirectoryModel> request)
         {
             if (request.Entity == null)
                 throw new Exception("Entity boş geçilemez");
@@ -124,21 +124,19 @@ namespace Membership.Site.Services
 
             var loggedUser = SecurityHelper.LoggerUserItem;
 
-            //new ApplicationManager(new Business.Model.WebUser()
+            //new DirectoryManager(new Business.Model.WebUser()
             //{
             //    Id = loggedUser.Id.Value,
             //}).Delete(request.EntityId.Value);
 
 
-
-
-            new ApplicationManager(new Business.Model.WebUser()
+            new DirectoryManager(new Business.Model.WebUser()
             {
                 Id = loggedUser.Id.Value,
-            }).Update(new Business.Model.Application()
+            }).Update(new Business.Model.Directory()
             {
-                ApplicationCode = request.Entity.ApplicationCode,
-                ApplicationName = request.Entity.ApplicationName,
+                DirectoryCode = request.Entity.DirectoryCode,
+                DirectoryName = request.Entity.DirectoryName,
                 Description = request.Entity.Description,
                 Id = request.Entity.Id,
             });
@@ -148,17 +146,17 @@ namespace Membership.Site.Services
             return new DeleteResponse();
         }
 
-        public CreateResponse Create(CreateRequest<ApplicationModel> request)
+        public CreateResponse Create(CreateRequest<DirectoryModel> request)
         {
             if (request.Entity == null)
                 throw new Exception("Entity boş geçilemez");
 
 
-            if (String.IsNullOrEmpty(request.Entity.ApplicationCode.Trim()))
-                throw new Exception("ApplicationCode boş olamaz");
+            if (String.IsNullOrEmpty(request.Entity.DirectoryCode.Trim()))
+                throw new Exception("DirectoryCode boş olamaz");
 
-            if (String.IsNullOrEmpty(request.Entity.ApplicationCode.Trim()))
-                throw new Exception("ApplicationCode boş olamaz");
+            if (String.IsNullOrEmpty(request.Entity.DirectoryCode.Trim()))
+                throw new Exception("DirectoryCode boş olamaz");
 
 
             //OK::NOT:: aşağıdaki şekilde WebUserManager a erişebilirim ama katmanlı yapı adına bu işlemi servis üzerinden yapacağım.
@@ -166,20 +164,20 @@ namespace Membership.Site.Services
 
             var loggedUser = SecurityHelper.LoggerUserItem;
 
-            //new ApplicationManager(new Business.Model.WebUser()
+            //new DirectoryManager(new Business.Model.WebUser()
             //{
             //    Id = loggedUser.Id.Value,
             //}).Delete(request.EntityId.Value);
 
 
 
-            var entityId = new ApplicationManager(new Business.Model.WebUser()
+            var entityId = new DirectoryManager(new Business.Model.WebUser()
                {
                    Id = loggedUser.Id.Value,
-               }).Create(new Business.Model.Application()
+               }).Create(new Business.Model.Directory()
                {
-                   ApplicationCode = request.Entity.ApplicationCode,
-                   ApplicationName = request.Entity.ApplicationName,
+                   DirectoryCode = request.Entity.DirectoryCode,
+                   DirectoryName = request.Entity.DirectoryName,
                    Description = request.Entity.Description,
                    Id = request.Entity.Id,
                });
