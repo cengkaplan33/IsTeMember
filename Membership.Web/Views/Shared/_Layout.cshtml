@@ -26,62 +26,22 @@
     <link rel="stylesheet" href="~/theme/css/plugins/jquery-select2.min.css">
     <link rel="stylesheet" href="~/theme/css/plugins/jquery-dataTables.min.css">
     
+    @*combobox lar için gerekli elemanlar*@
+    <link rel="stylesheet" href="~/theme/css/plugins/jquery-selectBoxIt.min.css">
+    <link rel="stylesheet" href="~/theme/css/plugins/jquery-chosen.min.css">
+
 
     <script src="~/theme/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/theme/assets/bs3/js/bootstrap.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery-navgoco/jquery.navgoco.js"></script>
+    <script src="~/theme/demo/js/main.js"></script>
+
 
     <script src="~/Theme/assets/libs/cengaver/cengaver.js"></script>
     <script src="~/Theme/assets/libs/cengaver/jquery.blockUI.js"></script>
     <script src="~/Theme/assets/libs/cengaver/jquery.json.js"></script>
 
-
-    <script src="~/theme/assets/bs3/js/bootstrap.min.js"></script>
-
-    @*table*@
-    <link rel="stylesheet" href="~/theme/css/plugins/jquery-select2.min.css">
-    <link rel="stylesheet" href="~/theme/css/plugins/jquery-dataTables.min.css">
-
-
-
-
-
-    @*<script src="~/theme/assets/libs/jquery/jquery.min.js"></script>
-    <script src="~/theme/assets/bs3/js/bootstrap.min.js"></script>
-    <script src="~/theme/assets/plugins/jquery-navgoco/jquery.navgoco.js"></script>
-    <script src="~/theme/js/main.js"></script>
-    <!--[if lt IE 9]>
-    <script src="~/theme/assets/plugins/flot/excanvas.min.js"></script>
-    <![endif]-->
-    <script src="~/theme/assets/plugins/jquery-sparkline/jquery.sparkline.js"></script>
-    <script src="~/theme/demo/js/demo.js"></script>
-
-
-    <script src="~/theme/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="~/theme/assets/plugins/jquery-jvectormap/maps/world_mill_en.js"></script>
-    <!--[if gte IE 9]>-->
-    <script src="~/theme/assets/plugins/rickshaw/js/vendor/d3.v3.js"></script>
-    <script src="~/theme/assets/plugins/rickshaw/rickshaw.min.js"></script>
-    <!--<![endif]-->
-    <script src="~/theme/assets/plugins/flot/jquery.flot.js"></script>
-    <script src="~/theme/assets/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="~/theme/assets/plugins/raphael/raphael-min.js"></script>
-    <script src="~/theme/assets/plugins/morris/morris.min.js"></script>
-    <script src="~/theme/demo/js/dashboard.js"></script>*@
-
-
-    @*<script src="~/theme/assets/plugins/jquery-datatables/js/jquery.dataTables.js"></script>
-    <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.tableTools.js"></script>
-    <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.bootstrap.js"></script>
-    <script src="~/theme/assets/plugins/jquery-select2/select2.min.js"></script>
-    <script src="~/theme/demo/js/tables-data-tables.js"></script>*@
-
-
-
-    <!--[if lt IE 9]>
-    <script src="~/theme/assets/libs/html5shiv/html5shiv.min.js"></script>
-
-    <script src="~/theme/assets/libs/respond/respond.min.js"></script>
-    <![endif]-->
-
+    
     @*@Html.Partial("_LayoutHead") --şimdilik buna gerek kalmadı *@ 
 </head>
 
@@ -99,9 +59,6 @@
                 </div>
             </div>
 
-          
-            <script src="~/theme/assets/plugins/jquery-navgoco/jquery.navgoco.js"></script>
-            <script src="~/theme/js/main.js"></script>
 
             <!--[if lt IE 9]>
     <script src="~/theme/assets/plugins/flot/excanvas.min.js"></script>
@@ -128,10 +85,39 @@
             @*işimi bozuyor şuan için*@
             @*<script src="~/theme/demo/js/dashboard.js"></script>*@
 
+            
+
+            @*form sayfasında kullanılan unique js ler*@
+            <script src="~/theme/demo/js/forms-basic-elements.js"></script>
+            <script src="~/theme/assets/plugins/jquery-autogrow-textarea/jquery.autogrow-textarea.js"></script>
+            @*<script src="~/theme/demo/js/icheck.js"></script>*@
+
+            <script src="~/theme/demo/js/tables-data-tables.js"></script>
+            
+
+            @* modal için varsayılan alert confirm prompt ve custom  için gerekli iki eleman *@
+            <script src="~/theme/assets/plugins/bootbox/bootbox.js"></script>
+            <script src="~/theme/demo/js/ui-modals.js"></script>
 
 
+            @*table için gerekli olan elemanlar*@
+            <script src="~/theme/assets/plugins/jquery-datatables/js/jquery.dataTables.js"></script>
+            <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.tableTools.js"></script>
+            <script src="~/theme/assets/plugins/jquery-datatables/js/dataTables.bootstrap.js"></script>
+            
+            @*combobox lar için gerekli elemanlar*@
+            <script src="~/theme/assets/libs/jquery-ui/minified/jquery-ui.min.js"></script>
+            <script src="~/theme/assets/plugins/jquery-select2/select2.min.js"></script>
+            <script src="~/theme/assets/plugins/jquery-selectboxit/javascripts/jquery.selectBoxIt.min.js"></script>
+            <script src="~/theme/assets/plugins/jquery-chosen/chosen.jquery.min.js"></script>
+            <script src="~/Theme/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+            <script src="~/Theme/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+            <script src="~/Theme/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+            <script src="~/Theme/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+            <script src="~/Theme/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+            <script src="~/theme/demo/js/forms-advanced-components.js"></script>
 
-
+            
             @RenderSection("scripts", required: false)
         </body>
     }

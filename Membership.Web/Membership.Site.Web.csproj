@@ -280,14 +280,14 @@
     <Content Include="Theme\demo\js\forms-form-wizards.js" />
     <Content Include="Theme\demo\js\forms-sliders.js" />
     <Content Include="Theme\demo\js\forms-validation.js" />
+    <Content Include="Theme\demo\js\main.js" />
     <Content Include="Theme\demo\js\maps-vector.js" />
     <Content Include="Theme\demo\js\pages-orders-dashboard.js" />
     <Content Include="Theme\demo\js\pages-orders.js" />
     <Content Include="Theme\demo\js\pages-profile.js" />
     <Content Include="Theme\demo\js\tables-data-tables.js" />
     <Content Include="Theme\demo\js\ui-modals.js" />
-    <Content Include="Theme\js\icheck.js" />
-    <Content Include="Theme\js\main.js" />
+    <Content Include="Theme\demo\js\icheck.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
